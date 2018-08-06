@@ -1,0 +1,41 @@
+@import 'normalize.css/normalize';
+@import 'variables';
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+  background-color: $mainBg;
+  background-image: url('../images/svg/mountains.svg');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: center;
+}
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.title, .subtitle {
+  font-family: 'Josefin Sans';
+}
+.title {
+  font-weight: 700;
+}
+.subtitle {
+  font-weight: 300;
+}
+.title--home {
+  font-size: 4rem;
+}
+.subtitle--home {
+  font-size: 3rem;
+}
+footer {
+  
+}
