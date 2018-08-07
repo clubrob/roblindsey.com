@@ -1,15 +1,21 @@
 const path = require('path');
 const gulp = require('gulp');
 const del = require('del');
+const imagemin = require('gulp-imagemin');
 // const pug = require('gulp-pug');
-const sass = require('gulp-sass');
+// CSS processing modules
+const postcss = require('gulp-postcss');
+const postcssImport = require('postcss-import');
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
+const fontMagic = require('postcss-font-magician');
 const csso = require('gulp-csso');
+// JS processing modules
 const terser = require('gulp-uglify-es').default;
 const webpackStream = require('webpack-stream');
-const imagemin = require('gulp-imagemin');
+// Dev browser modules
 const browser = require('browser-sync').create();
 const historyApi = require('connect-history-api-fallback');
-// require('dotenv').config();
 
 gulp.task('clean:dist', () => {
   return del(['dist/**/*']);
@@ -28,15 +34,6 @@ gulp.task('bundleJSDev', () =>
         node: {
           fs: 'empty',
         },
-        /* plugins: [
-          new webpackStream.webpack.EnvironmentPlugin([
-            'FIREBASE_API_KEY',
-            'FIREBASE_AUTH_DOMAIN',
-            'FIREBASE_PROJECT_ID',
-            'FIREBASE_DB_URL',
-            'FIREBASE_STORAGE_BUCKET',
-          ]),
-        ], */
       })
     )
     .pipe(gulp.dest('dist/js/'))
@@ -55,15 +52,6 @@ gulp.task('bundleJS', () =>
         node: {
           fs: 'empty',
         },
-        /* plugins: [
-          new webpackStream.webpack.EnvironmentPlugin([
-            'FIREBASE_API_KEY',
-            'FIREBASE_AUTH_DOMAIN',
-            'FIREBASE_PROJECT_ID',
-            'FIREBASE_DB_URL',
-            'FIREBASE_STORAGE_BUCKET',
-          ]),
-        ], */
       })
     )
     .pipe(terser())
@@ -73,11 +61,22 @@ gulp.task('bundleJS', () =>
 
 gulp.task('bundleCSS', () =>
   gulp
-    .src('src/scss/style.scss')
+    .src('src/css/style.css')
     .pipe(
-      sass({
-        includePaths: [path.join(__dirname, 'node_modules')],
-      })
+      postcss([
+        postcssImport(),
+        precss(),
+        fontMagic({
+          variants: {
+            'Josefin Sans': {
+              '300': [],
+              '700': [],
+            },
+          },
+          foundries: ['google'],
+        }),
+        autoprefixer(),
+      ])
     )
     .pipe(csso())
     .pipe(gulp.dest('dist/css/'))
@@ -101,21 +100,27 @@ gulp.task('optimizeImages', done => {
 
 gulp.task(
   'serve',
-  gulp.parallel(['optimizeImages', 'bundleCSS', 'bundleJSDev', 'cleanHTML'], () => {
-    browser.init({
-      server: {
-        baseDir: './dist',
-        middleware: [historyApi()],
-      },
-    });
+  gulp.parallel(
+    ['optimizeImages', 'bundleCSS', 'bundleJSDev', 'cleanHTML'],
+    () => {
+      browser.init({
+        server: {
+          baseDir: './dist',
+          middleware: [historyApi()],
+        },
+      });
 
-    gulp.watch('src/scss/**/*.scss', gulp.series('bundleCSS'));
-    gulp.watch('src/js/**/*.js', gulp.series('bundleJSDev'));
-    gulp.watch('src/views/**/*.html', gulp.series('cleanHTML'));
-    gulp.watch('src/images/**/*', gulp.series('optimizeImages'));
-  })
+      gulp.watch('src/scss/**/*.scss', gulp.series('bundleCSS'));
+      gulp.watch('src/js/**/*.js', gulp.series('bundleJSDev'));
+      gulp.watch('src/views/**/*.html', gulp.series('cleanHTML'));
+      gulp.watch('src/images/**/*', gulp.series('optimizeImages'));
+    }
+  )
 );
 
-gulp.task('default', gulp.series('serve'));
-gulp.task('build', gulp.parallel('optimizeImages', 'bundleCSS', 'bundleJS', 'cleanHTML'));
+gulp.task('default', gulp.series('clean:dist', 'serve'));
+gulp.task(
+  'build',
+  gulp.parallel('optimizeImages', 'bundleCSS', 'bundleJS', 'cleanHTML')
+);
 gulp.task('prod', gulp.series('clean:dist', 'build'));
