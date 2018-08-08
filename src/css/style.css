@@ -2,3 +2,5 @@
 @import './modules/_variables.pcss';
 @import './modules/_global.pcss';
 @import './modules/_nav.pcss';
+@import './modules/_card.pcss';
+@import './modules/_tag.pcss';

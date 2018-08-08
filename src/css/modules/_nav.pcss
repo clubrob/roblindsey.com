@@ -38,6 +38,15 @@ nav>.navbar {
         font-size: 1.4rem;
         text-transform: lowercase;
         color: #5C5858;
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom: 1px solid #dfdfdf;
+          margin-bottom: -1px;
+          box-shadow: 0 12px 12px -12px rgb(0,0,0,0.5);
+          transition: box-shadow 80ms;
+          transition-timing-function: ease-in-out;
+        }
       }
     }
   }

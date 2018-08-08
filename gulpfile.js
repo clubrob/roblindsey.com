@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 const gulp = require('gulp');
 const del = require('del');
 const imagemin = require('gulp-imagemin');
@@ -15,7 +15,7 @@ const terser = require('gulp-uglify-es').default;
 const webpackStream = require('webpack-stream');
 // Dev browser modules
 const browser = require('browser-sync').create();
-const historyApi = require('connect-history-api-fallback');
+// const historyApi = require('connect-history-api-fallback');
 
 gulp.task('clean:dist', () => {
   return del(['dist/**/*']);
@@ -106,7 +106,6 @@ gulp.task(
       browser.init({
         server: {
           baseDir: './dist',
-          middleware: [historyApi()],
         },
       });
 

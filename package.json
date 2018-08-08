@@ -32,6 +32,8 @@
     "webpack-stream": "^5.1.1"
   },
   "dependencies": {
+    "marked": "^0.4.0",
+    "moment": "^2.22.2",
     "normalize.css": "^8.0.0"
   }
 }
