@@ -102,7 +102,7 @@ gulp.task(
   'serve',
   gulp.parallel(
     ['optimizeImages', 'bundleCSS', 'bundleJSDev', 'cleanHTML'],
-    () => {
+    function browserSyncInit() {
       browser.init({
         server: {
           baseDir: './dist',
@@ -110,7 +110,8 @@ gulp.task(
         },
       });
 
-      gulp.watch('src/scss/**/*.scss', gulp.series('bundleCSS'));
+      gulp.watch('src/css/**/*.css', gulp.series('bundleCSS'));
+      gulp.watch('src/css/**/*.pcss', gulp.series('bundleCSS'));
       gulp.watch('src/js/**/*.js', gulp.series('bundleJSDev'));
       gulp.watch('src/views/**/*.html', gulp.series('cleanHTML'));
       gulp.watch('src/images/**/*', gulp.series('optimizeImages'));

@@ -12,9 +12,17 @@ body {
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-position-x: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
+  color: $primary;
+  &:hover {
+    text-decoration: none;
+  }
 }
 .container {
-  width: 70%;
   margin: 0 auto;
   padding: 0 2.5rem;
 }
@@ -27,11 +35,26 @@ body {
 .subtitle {
   font-weight: 300;
 }
-.title--home {
-  font-size: 4rem;
-}
-.subtitle--home {
-  font-size: 3rem;
+section.home {
+  width: 40%;
+  margin: 0 auto;
+  .title--home {
+    padding: 5rem 0 0;
+    font-size: 4.7rem;
+  }
+  .subtitle--home {
+    padding: 2rem 0 4rem;
+    font-size: 3.1rem;
+  }
+  .me {
+    padding: 2rem 0;
+    text-align: center;
+    img {
+      width: 50%;
+      height: auto;
+      box-shadow: 4px 4px 6px rgb(172, 172, 172);
+    }
+  }
 }
 footer {
   
