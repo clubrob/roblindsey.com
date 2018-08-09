@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rob Lindsey Design</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <nav>
     <div class="top">
       <div class="home">
-        <a href="/"><img src="../images/svg/botdot.svg" alt="Rob Lindsey Design - Home"></a>
+        <a href="/" id="nav_home_link"><img src="/images/svg/home.svg" alt="Rob Lindsey Design - Home"></a>
       </div>
       <div class="logo">
-        <a href="/"><img src="../images/svg/wordmark.svg" alt="Rob Lindsey Design"></a>
+        <a href="/"><img src="/images/svg/wordmark.svg" alt="Rob Lindsey Design"></a>
       </div>
       <div class="search">
-        <a href="#"><img src="../images/svg/search.svg" alt="Search"></a>
+        <a href="#"><img src="/images/svg/search.svg" alt="Search"></a>
       </div>
     </div>
     <div class="navbar">
@@ -28,14 +28,19 @@
       </ul>
     </div>
   </nav>
-  <main class="container">
-    <section class="feed">
-      <h1 class="title title--feed">Feed.</h1>
-    </section>
-    <footer>
-
-    </footer>
+  <main>
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
   </main>
-  <script src="../js/app.bundle.js"></script>
+  <footer id="main-footer">
+    <p>&copy; 2018 Rob Lindsey Design. Made in Asheville, N.C.</p>
+  </footer>
+  <div class="modal" id="feed__modal">
+    <div class="modal__background"></div>
+    <div class="modal__content"></div>
+    <button class="modal__close"></button>
+  </div>
+  <script src="/js/app.bundle.js"></script>
 </body>
 </html>

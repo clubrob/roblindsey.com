@@ -2,7 +2,8 @@
 const gulp = require('gulp');
 const del = require('del');
 const imagemin = require('gulp-imagemin');
-// const pug = require('gulp-pug');
+// HTML processing modules
+const nunjucks = require('gulp-nunjucks-render');
 // CSS processing modules
 const postcss = require('gulp-postcss');
 const postcssImport = require('postcss-import');
@@ -72,6 +73,9 @@ gulp.task('bundleCSS', () =>
               '300': [],
               '700': [],
             },
+            Roboto: {
+              '400': [],
+            },
           },
           foundries: ['google'],
         }),
@@ -83,9 +87,21 @@ gulp.task('bundleCSS', () =>
     .pipe(browser.stream())
 );
 
+// gulp.task('cleanHTML', () =>
+//   gulp
+//     .src(['src/views/**/*.html', '!src/views/**/_*.html'])
+//     .pipe(gulp.dest('dist/'))
+//     .pipe(browser.stream())
+// );
+
 gulp.task('cleanHTML', () =>
   gulp
-    .src(['src/views/**/*.html', '!src/views/**/_*.html'])
+    .src(['src/views/**/*.njk', '!src/views/**/_*.njk'])
+    .pipe(
+      nunjucks({
+        path: ['src/views'],
+      })
+    )
     .pipe(gulp.dest('dist/'))
     .pipe(browser.stream())
 );
@@ -112,7 +128,7 @@ gulp.task(
       gulp.watch('src/css/**/*.css', gulp.series('bundleCSS'));
       gulp.watch('src/css/**/*.pcss', gulp.series('bundleCSS'));
       gulp.watch('src/js/**/*.js', gulp.series('bundleJSDev'));
-      gulp.watch('src/views/**/*.html', gulp.series('cleanHTML'));
+      gulp.watch('src/views/**/*.njk', gulp.series('cleanHTML'));
       gulp.watch('src/images/**/*', gulp.series('optimizeImages'));
     }
   )
