@@ -1,92 +1,31 @@
-const createItem = require('../tools/create-item');
+const { firstLetterToUpper } = require('../tools/util');
 
-const loader = `
-  <div class="loader">
-    <img src="/images/svg/loading.svg" alt="loading...">
-  </div>
-`;
+const feedView = {
+  feedListHeader: function() {
+    return `<h1 class="title feed__title">Feed.</h1>`;
+  },
+  itemHeader: function(title) {
+    return `<h1 class="title feed__title">${title}.</h1>`;
+  },
+  tagListHeader: function(tag) {
+    return `<h1 class="title feed__title">Tag: ${tag}.</h1>`;
+  },
+  categoryListHeader: function(category) {
+    category = firstLetterToUpper(category);
+    return `<h1 class="title feed__title">${category}s.</h1>`;
+  },
+  pagination: function(data) {
+    let prev = data.previous;
+    let next = data.next;
+    let type = data.type;
 
-function firstLetterToUpper(string) {
-  return `${string[0].toUpperCase()}${string.slice(1)}`;
-}
-
-const feedView = function(endpoint) {
-  const feedSection = document.querySelector('#feed');
-  feedSection.innerHTML = `<h1 class="title feed__title">Feed.</h1>`;
-  const feedCards = document.querySelector('#feed__cards');
-  feedCards.innerHTML = loader;
-  return fetch(endpoint + 'feed')
-    .then(res => {
-      return res.json();
-    })
-    .then(res => {
-      feedCards.innerHTML = '';
-      res.forEach(item => {
-        feedCards.innerHTML += createItem(item, 'card');
-      });
-      return;
-    })
-    .catch(err => console.error(err.message));
+    return `
+      <div class="pagination">
+        <a href="#" data-page="${prev}" data-type="${type}" class="pagination__previous" id="page_previous">Previous</a>
+        <a href="#" data-page="${next}" data-type="${type}" class="pagination__next" id="page_next">Next</a>
+      </div>
+    `;
+  },
 };
 
-const singleItem = function(endpoint, slug) {
-  console.log('you are at item view');
-  const feedModal = document.querySelector('#feed__modal');
-  const modalContent = feedModal.querySelector('.modal__content');
-
-  feedModal.classList.add('active');
-  modalContent.innerHTML = loader;
-  return fetch(endpoint + `feed/${slug}`)
-    .then(res => {
-      return res.json();
-    })
-    .then(res => {
-      modalContent.innerHTML = '';
-      res.forEach(data => {
-        modalContent.innerHTML = createItem(data, 'item');
-      });
-      return;
-    })
-    .catch(err => console.error(err.message));
-};
-
-const tagList = function(endpoint, slug) {
-  const feedSection = document.querySelector('#feed');
-  feedSection.innerHTML = `<h1 class="title feed__title">Tag: ${slug}.</h1>`;
-  const feedCards = document.querySelector('#feed__cards');
-  feedCards.innerHTML = loader;
-  return fetch(endpoint + `tag/${slug}`)
-    .then(res => {
-      return res.json();
-    })
-    .then(res => {
-      feedCards.innerHTML = '';
-      res.forEach(item => {
-        feedCards.innerHTML += createItem(item, 'card');
-      });
-      return;
-    })
-    .catch(err => console.error(err.message));
-};
-
-const categoryList = function(endpoint, slug) {
-  const header = firstLetterToUpper(slug);
-  const feedSection = document.querySelector('#feed');
-  feedSection.innerHTML = `<h1 class="title feed__title">${header}s.</h1>`;
-  const feedCards = document.querySelector('#feed__cards');
-  feedCards.innerHTML = loader;
-  return fetch(endpoint + `category/${slug}`)
-    .then(res => {
-      return res.json();
-    })
-    .then(res => {
-      feedCards.innerHTML = '';
-      res.forEach(item => {
-        feedCards.innerHTML += createItem(item, 'card');
-      });
-      return;
-    })
-    .catch(err => console.error(err.message));
-};
-
-module.exports = { feedView, singleItem, tagList, categoryList };
+module.exports = feedView;

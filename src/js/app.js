@@ -1,14 +1,9 @@
-const homeView = require('./views/home-view');
-const {
-  feedView,
-  singleItem,
-  tagList,
-  categoryList,
-} = require('./views/feed-view');
+const homeController = require('./controllers/home-controller');
+const feedController = require('./controllers/feed-controller');
 const workView = require('./views/work-view');
 const contactView = require('./views/contact-view');
 
-const endpoint =
+const baseUrl =
   'https://us-central1-roblindseydesign.cloudfunctions.net/rldesign/';
 const path = window.location.pathname;
 const hash = window.location.hash.substr(2);
@@ -17,22 +12,22 @@ const hash = window.location.hash.substr(2);
 if (path === '/' || path === '/index.html') {
   const homeLink = document.querySelector('#nav_home_link');
   homeLink.innerHTML = `<img src="/images/svg/botdot.svg" alt="Rob Lindsey Design - Home">`;
-  homeView(endpoint);
+  homeController.home(baseUrl);
 }
 // Feed route
 if (path === '/feed/' || path === '/feed/index.html') {
   if (hash.length > 0) {
     const slug = hash;
-    singleItem(endpoint, slug);
+    feedController.feedItem(baseUrl, slug);
   } else {
-    feedView(endpoint);
+    feedController.feedList(baseUrl);
   }
 }
 // Feed tag routes
 if (path === '/feed/tag/' || path === '/feed/tag/index.html') {
   if (hash.length > 0) {
-    const slug = hash;
-    tagList(endpoint, slug);
+    const tag = hash;
+    feedController.tagList(baseUrl, tag);
   } else {
     window.location.replace('/feed/');
   }
@@ -40,29 +35,30 @@ if (path === '/feed/tag/' || path === '/feed/tag/index.html') {
 // Feed category routes
 if (path === '/feed/category/' || path === '/feed/category/index.html') {
   if (hash.length > 0) {
-    const slug = hash;
-    console.log('you are here: ', slug);
-    categoryList(endpoint, slug);
+    const category = hash;
+    feedController.categoryList(baseUrl, category);
   } else {
     window.location.replace('/feed/');
   }
 }
 // Work route
 if (path === '/work/' || path === '/work/index.html') {
-  workView(endpoint);
+  workView(baseUrl);
 }
 // Contact route
 if (path === '/contact/' || path === '/contact/index.html') {
-  contactView(endpoint);
+  contactView(baseUrl);
 }
 // Event listeners
 // Preserve back button during active modal
 window.addEventListener('popstate', () => {
   window.location.reload();
 });
+
 // Modal events
 document.addEventListener('click', event => {
   let link = event.target;
+  // Open modal
   if (
     link &&
     (link.matches('.modal-trigger') || link.matches('.modal-trigger>img'))
@@ -71,23 +67,34 @@ document.addEventListener('click', event => {
     if (link.matches('img')) {
       link = link.parentElement;
     }
-    const slug = link.hash.substr(1);
+    const slug = link.hash.substr(2);
+
     if (slug.length > 0) {
-      window.location.assign(`/feed/#${slug}`);
-      const feedModal = document.querySelector('#feed__modal');
+      // window.location.assign(`/feed/#${slug}`);
+      const feedModal = document.querySelector('#item__modal');
       feedModal.classList.add('active');
-      singleItem(endpoint, slug);
+      feedController.feedItemModal(baseUrl, slug);
     }
     event.preventDefault();
   }
-
+  // Close modal
   if (link && link.matches('.modal__close')) {
-    const feedModal = document.querySelector('#feed__modal');
+    const feedModal = document.querySelector('#item__modal');
     const modalContent = feedModal.querySelector('.modal__content');
 
     feedModal.classList.remove('active');
     modalContent.innerHTML = '';
-    window.history.back();
+    // window.history.back();
+    event.preventDefault();
+  }
+});
+// Pagination
+document.addEventListener('click', event => {
+  let link = event.target;
+
+  if (link && (link.matches('#page_next') || link.matches('#page_previous'))) {
+    feedController.paginate(baseUrl, link.dataset.type, link.dataset.page);
+    window.scrollTo(0, 0);
     event.preventDefault();
   }
 });
