@@ -1,5 +1,6 @@
 const homeController = require('./controllers/home-controller');
 const feedController = require('./controllers/feed-controller');
+const searchController = require('./controllers/search-controller');
 const workView = require('./views/work-view');
 const contactView = require('./views/contact-view');
 
@@ -41,6 +42,11 @@ if (path === '/feed/category/' || path === '/feed/category/index.html') {
     window.location.replace('/feed/');
   }
 }
+// Search route
+if (path === '/search/' || path === '/search/index.html') {
+  const results = JSON.parse(localStorage.getItem('results'));
+  searchController.searchResults(results);
+}
 // Work route
 if (path === '/work/' || path === '/work/index.html') {
   workView(baseUrl);
@@ -56,6 +62,13 @@ window.addEventListener('popstate', () => {
 });
 
 // Modal events
+// Modal container
+const feedModal = document.querySelector('#item__modal');
+const modalContent = feedModal.querySelector('.modal__content');
+function closeModal() {
+  feedModal.classList.remove('active');
+  modalContent.innerHTML = '';
+}
 document.addEventListener('click', event => {
   let link = event.target;
   // Open modal
@@ -70,8 +83,6 @@ document.addEventListener('click', event => {
     const slug = link.hash.substr(2);
 
     if (slug.length > 0) {
-      // window.location.assign(`/feed/#${slug}`);
-      const feedModal = document.querySelector('#item__modal');
       feedModal.classList.add('active');
       feedController.feedItemModal(baseUrl, slug);
     }
@@ -79,12 +90,26 @@ document.addEventListener('click', event => {
   }
   // Close modal
   if (link && link.matches('.modal__close')) {
-    const feedModal = document.querySelector('#item__modal');
-    const modalContent = feedModal.querySelector('.modal__content');
-
-    feedModal.classList.remove('active');
-    modalContent.innerHTML = '';
-    // window.history.back();
+    closeModal();
+    event.preventDefault();
+  }
+});
+// Search events
+function searchHandler() {
+  localStorage.clear();
+  const searchTerm = document.querySelector('#search-term').value;
+  searchController.searchAction(searchTerm);
+}
+const searchActivate = document.querySelector('#search-activate');
+searchActivate.addEventListener('click', event => {
+  feedModal.classList.add('active');
+  searchController.searchForm();
+  event.preventDefault();
+});
+document.addEventListener('click', event => {
+  const btn = event.target;
+  if (btn && btn.matches('#search-button')) {
+    searchHandler();
     event.preventDefault();
   }
 });

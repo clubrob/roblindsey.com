@@ -1,3 +1,4 @@
+require('dotenv').config();
 // const path = require('path');
 const gulp = require('gulp');
 const del = require('del');
@@ -8,6 +9,7 @@ const nunjucks = require('gulp-nunjucks-render');
 const postcss = require('gulp-postcss');
 const postcssImport = require('postcss-import');
 const precss = require('precss');
+const colorFunction = require("postcss-color-function");
 const autoprefixer = require('autoprefixer');
 const fontMagic = require('postcss-font-magician');
 const csso = require('gulp-csso');
@@ -16,7 +18,6 @@ const terser = require('gulp-uglify-es').default;
 const webpackStream = require('webpack-stream');
 // Dev browser modules
 const browser = require('browser-sync').create();
-// const historyApi = require('connect-history-api-fallback');
 
 gulp.task('clean:dist', () => {
   return del(['dist/**/*']);
@@ -35,6 +36,13 @@ gulp.task('bundleJSDev', () =>
         node: {
           fs: 'empty',
         },
+        plugins: [
+          new webpackStream.webpack.EnvironmentPlugin([
+            'ALGOLIA_APP_ID',
+            'ALGOLIA_SEARCH_KEY',
+            'ALGOLIA_INDEX_NAME',
+          ]),
+        ],
       })
     )
     .pipe(gulp.dest('dist/js/'))
@@ -67,6 +75,7 @@ gulp.task('bundleCSS', () =>
       postcss([
         postcssImport(),
         precss(),
+        colorFunction(),
         fontMagic({
           variants: {
             'Josefin Sans': {

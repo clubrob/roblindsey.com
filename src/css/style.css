@@ -8,6 +8,7 @@
 @import './modules/_feed_item.pcss';
 @import './modules/_tag.pcss';
 @import './modules/_modal.pcss';
+@import './modules/_form.pcss';
 /* Pages */
 
 @import './pages/_home.pcss';
