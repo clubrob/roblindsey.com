@@ -20,11 +20,21 @@ const createItem = function(data, format) {
 
   // Item tags
   let itemTags = '';
-  if (tags) {
+  let tagChunk = '';
+
+  if (Object.keys(tags).length > 0) {
     let tagArr = Object.keys(tags);
     tagArr.forEach(tag => {
       itemTags += `<span class="${format}__footer__tag tag"><a href="/feed/tag/#/${tag}">${tag}</a></span>`;
     });
+    tagChunk = `
+      <footer class="${format}__footer">
+        <p class="${format}__footer__title subtitle">Tags:</p>
+        <div class="tags">
+          ${itemTags}
+        </div>
+      </footer>
+    `;
   }
   // Create image template for pics and posts
   let itemImage = '';
@@ -111,12 +121,7 @@ const createItem = function(data, format) {
       <div class="${format}__content content">
         ${itemContent}
       </div>
-      <footer class="${format}__footer">
-        <p class="${format}__footer__title subtitle">Tags:</p>
-        <div class="tags">
-          ${itemTags}
-        </div>
-      </footer>
+      ${tagChunk} 
     </article>
   `;
   return item;

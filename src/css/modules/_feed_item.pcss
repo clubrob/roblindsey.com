@@ -2,12 +2,14 @@
   border-radius: 10px;
   border-bottom-right-radius: 0;
 }
-.feed__modal, 
-.feed__modal__header, 
-.feed__modal__content, 
+
+.feed__modal,
+.feed__modal__header,
+.feed__modal__content,
 .feed__modal__footer {
   background-color: $mainBg;
 }
+
 .feed__item__header,
 .feed__modal__header {
   border-bottom: 1px solid #efefef;
@@ -17,41 +19,56 @@
   position: relative;
   padding: 1.2rem 1rem;
 }
-.feed__item__header__date, 
+
+.feed__item__header__date,
 .feed__modal__header__date {
   font-size: 1.3rem;
   a {
     color: #828282;
   }
 }
-.feed__item__image, 
+
+.feed__item__image,
 .feed__modal__image {
   margin-bottom: 1em;
 }
+
 .feed__item__image__image img,
 .feed__modal__image__image img {
   width: 100%;
   height: 100%;
 }
+
 .feed__modal__content {
-  max-height: calc(100vh - 300px);
+  max-height: calc(100vh - 200px);
   overflow-y: auto;
   overflow-x: hidden;
   padding: 4rem 4.5rem;
 }
-.feed__item__content__title {
+
+.feed__item__content__title.post-title {
   display: none;
 }
+
 .feed__item__content__body,
 .feed__modal__content__body {
   padding-bottom: 3rem;
 }
+
+.feed__item__content__body.quip-body {
+  padding-top: 3rem;
+  p {
+    font-size: 1.8rem;
+  }
+}
+
 .feed__item__footer,
 .feed__modal__footer {
   border-top: 1px solid #efefef;
   border-bottom-left-radius: 10px;
   padding: 1rem 1.2rem;
 }
+
 .feed__item__footer__title,
 .feed__modal__footer__title {
   font-size: 1.5rem;

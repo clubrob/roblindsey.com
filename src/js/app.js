@@ -44,8 +44,9 @@ if (path === '/feed/category/' || path === '/feed/category/index.html') {
 }
 // Search route
 if (path === '/search/' || path === '/search/index.html') {
+  document.querySelector('#search-activate').style.display = 'none';
   const results = JSON.parse(localStorage.getItem('results'));
-  searchController.searchResults(results);
+  searchController.searchPage();
 }
 // Work route
 if (path === '/work/' || path === '/work/index.html') {
@@ -111,6 +112,12 @@ document.addEventListener('click', event => {
   if (btn && btn.matches('#search-button')) {
     searchHandler();
     event.preventDefault();
+  }
+});
+document.addEventListener('keydown', event => {
+  const input = event.target;
+  if (input && input.matches('#search-term') && event.keyCode === 13) {
+    searchHandler();
   }
 });
 // Pagination

@@ -13,5 +13,6 @@
 
 @import './pages/_home.pcss';
 @import './pages/_feed.pcss';
+@import './pages/_search.pcss';
 @import './pages/_work.pcss';
 @import './pages/_contact.pcss';

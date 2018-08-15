@@ -5,7 +5,7 @@ const feedView = {
     return `<h1 class="title feed__title">Feed.</h1>`;
   },
   itemHeader: function(title) {
-    return `<h1 class="title feed__title">${title}.</h1>`;
+    return `<h1 class="title feed__title">${title}</h1>`;
   },
   tagListHeader: function(tag) {
     return `<h1 class="title feed__title">Tag: ${tag}.</h1>`;

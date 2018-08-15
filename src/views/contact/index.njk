@@ -3,5 +3,27 @@
 {% block content %}
   <section id="contact">
     <h1 class="title contact__title">Contact.</h1>
+    <div class="content">
+      <h4 class="subtit">Send me a message!</h4>
+      <form action="https://send.pageclip.co/MrqeT0nE0xy3AOtTUeKIMkGoceBB7RbM/RLD-Contact" class="pageclip-form" method="post">
+        <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
+        <label for="name">Your Name</label>
+        <input type="text" name="name" value="" required />
+        <label for="email">Your Email</label>
+        <input type="email" name="email" value="" required />
+        <label for="body">Your Message</label>
+        <textarea name="body" required></textarea>
+        <!-- This button will have a loading spinner. Keep the inner span for best results. -->
+        <button type="submit" class="pageclip-form__submit form__button">
+          <span>Send</span>
+        </button>
+      </form>
+    </div>
+    <div class="content">
+      <h3 class="title">Find Me.</h3>
+      <p>You can also find me spending time at these places:</p>
+      <p>github, linkedin, twitter, mastodon, codepen</p>
+    </div>
   </section>
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 {% endblock %}

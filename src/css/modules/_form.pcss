@@ -1,14 +1,23 @@
-input {
-  margin-bottom: 1rem;
+form {
+  margin: 1.5rem 0;
 }
-input[type="text"] {
+label {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: .5rem;
+  display: block;
+}
+input, textarea {
+  margin-bottom: 1.5rem;
+}
+input[type="text"], input[type="email"], textarea {
   width: 100%;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 10px;
   outline-color: transparent;
-  border-color: transparent;
+  border: 1px solid rgb(214, 214, 212);
   color: $darkGray;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: 'Josefin Sans', Verdana, sans-serif;
   font-weight: bold;
   &:focus {
@@ -19,11 +28,11 @@ button.form__button {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-color: transparent;
   outline-color: transparent;
-  padding: 1rem 2rem;
-  border-radius: 10px;
+  padding: .5rem 1rem;
+  border-radius: 5px;
   background-color: $primary;
   color: $lightGray;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   cursor: pointer;
   &:hover,

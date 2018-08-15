@@ -35,7 +35,7 @@ const feedController = {
       .then(res => {
         feedCards.innerHTML = '';
         res.forEach(item => {
-          if (item.title) {
+          if (item.item_type === 'post') {
             feedSection.innerHTML = feedView.itemHeader(item.title);
           }
           feedCards.innerHTML = createItem(item, 'item');

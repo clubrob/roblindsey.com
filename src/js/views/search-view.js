@@ -1,14 +1,15 @@
 const searchView = {
-  searchForm: function() {
+  searchForm: function(term) {
+    term = term || '';
     return `
-      <div id="search-form">
-        <input type="text" name="search-term" id="search-term">
+      <div id="search-form" class="form">
+        <input type="text" name="search-term" id="search-term" value="${term}" class="form__input">
         <button id="search-button" class="form__button">Search</button>
       </div>
     `;
   },
-  searchResults: function(results) {
-    return console.log(results);
+  searchHeader: function(title) {
+    return `<h1 class="title search__title">${title}.</h1>`;
   },
 };
 
