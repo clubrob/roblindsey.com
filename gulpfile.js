@@ -61,6 +61,13 @@ gulp.task('bundleJS', () =>
         node: {
           fs: 'empty',
         },
+        plugins: [
+          new webpackStream.webpack.EnvironmentPlugin([
+            'ALGOLIA_APP_ID',
+            'ALGOLIA_SEARCH_KEY',
+            'ALGOLIA_INDEX_NAME',
+          ]),
+        ],
       })
     )
     .pipe(terser())

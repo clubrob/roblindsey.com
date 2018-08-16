@@ -16,7 +16,7 @@ if (path === '/' || path === '/index.html') {
   homeController.home(baseUrl);
 }
 // Feed route
-if (path === '/feed/' || path === '/feed/index.html') {
+if (path === '/feed/' || path === '/feed' || path === '/feed/index.html') {
   if (hash.length > 0) {
     const slug = hash;
     feedController.feedItem(baseUrl, slug);
@@ -43,9 +43,12 @@ if (path === '/feed/category/' || path === '/feed/category/index.html') {
   }
 }
 // Search route
-if (path === '/search/' || path === '/search/index.html') {
+if (
+  path === '/search/' ||
+  path === '/search' ||
+  path === '/search/index.html'
+) {
   document.querySelector('#search-activate').style.display = 'none';
-  const results = JSON.parse(localStorage.getItem('results'));
   searchController.searchPage();
 }
 // Work route
