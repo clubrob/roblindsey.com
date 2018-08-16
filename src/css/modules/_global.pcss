@@ -191,6 +191,32 @@ section {
       }
     }
 }
+/* Page specific styles */
+@media screen and (min-width: $tabletBrk) {
+  section#contact, section#feed, section#search, section#work, section#feed__cards, section#work__cards, section#home__cards {
+    width: 70%;
+    margin: 0 auto;
+  }
+  section#feed__cards, section#work__cards {
+    padding: 6rem 0;
+  }
+}
+section#feed__cards, section#work__cards, section#home__cards {
+  padding: 4rem 0;
+  h2 {
+    padding-bottom: 0.5rem;
+  }
+}
+.contact__title, .work__title, .search__title, .feed__title {
+  padding: 4rem 0 0;
+  font-size: 4.7rem;
+}
+.contact__icons {
+  img {
+    width: 80px;
+    height: auto;
+  }
+}
 footer#main-footer {
   text-align: center;
   p {

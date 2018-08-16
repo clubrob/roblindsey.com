@@ -9,7 +9,7 @@ const nunjucks = require('gulp-nunjucks-render');
 const postcss = require('gulp-postcss');
 const postcssImport = require('postcss-import');
 const precss = require('precss');
-const colorFunction = require("postcss-color-function");
+const colorFunction = require('postcss-color-function');
 const autoprefixer = require('autoprefixer');
 const fontMagic = require('postcss-font-magician');
 const csso = require('gulp-csso');
@@ -95,13 +95,6 @@ gulp.task('bundleCSS', () =>
     .pipe(gulp.dest('dist/css/'))
     .pipe(browser.stream())
 );
-
-// gulp.task('cleanHTML', () =>
-//   gulp
-//     .src(['src/views/**/*.html', '!src/views/**/_*.html'])
-//     .pipe(gulp.dest('dist/'))
-//     .pipe(browser.stream())
-// );
 
 gulp.task('cleanHTML', () =>
   gulp
