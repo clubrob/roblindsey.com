@@ -4,11 +4,13 @@ const searchView = require('../views/search-view');
 const loader = require('../views/loader-view');
 
 const searchController = {
+  // Insert search form into modal
   searchForm: function() {
     const feedModal = document.querySelector('#item__modal');
     const modalContent = feedModal.querySelector('.modal__content');
     modalContent.innerHTML = searchView.searchForm();
   },
+  // Conduct search, set results to session storage
   searchAction: function(searchTerm) {
     search
       .postSearch(searchTerm)
@@ -22,6 +24,7 @@ const searchController = {
       })
       .catch(err => console.error(err));
   },
+  // Populate search results page from session storage
   searchPage: function() {
     // Dynamic title / search box
     let title = 'Search';

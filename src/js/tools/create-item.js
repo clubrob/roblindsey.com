@@ -18,7 +18,7 @@ const createItem = function(data, format) {
   let modalTrigger = format === 'modal' ? '' : 'modal-trigger';
   format = format !== 'card' ? `feed__${format}` : format;
 
-  // Item tags
+  // Item tags, shown conditionally
   let itemTags = '';
   let tagChunk = '';
 
@@ -60,6 +60,7 @@ const createItem = function(data, format) {
     }
   }
   // Different layouts for content types
+  // Post content
   let itemContent = '';
   if (type === 'post') {
     if (format === 'card') {
@@ -82,6 +83,7 @@ const createItem = function(data, format) {
       `;
     }
   }
+  // Quip content
   if (type === 'quip') {
     body = marked(body);
     itemContent = `
@@ -90,6 +92,7 @@ const createItem = function(data, format) {
       </div>
     `;
   }
+  // Pic content
   if (type === 'pic') {
     body = marked(body);
     itemContent = `
@@ -99,6 +102,7 @@ const createItem = function(data, format) {
       </div>
     `;
   }
+  // Clip content
   if (type === 'clip') {
     summary = marked(summary);
     itemContent = `
