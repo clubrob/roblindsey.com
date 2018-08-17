@@ -69,7 +69,7 @@ const feedController = {
     return fetchHelper(baseUrl, `tag/${tag}`)
       .then(res => {
         feedCards.innerHTML = '';
-        res.forEach(item => {
+        res.docs.forEach(item => {
           feedCards.innerHTML += createItem(item, 'card');
         });
         return;
@@ -85,9 +85,16 @@ const feedController = {
     return fetchHelper(baseUrl, `category/${category}`)
       .then(res => {
         feedCards.innerHTML = '';
-        return res.forEach(item => {
+        res.docs.forEach(item => {
           feedCards.innerHTML += createItem(item, 'card');
         });
+        let paginationOptions = {
+          previous: res.pages.prev,
+          next: res.pages.next,
+          type: `category/${category}`,
+        };
+        feedCards.innerHTML += feedView.pagination(paginationOptions);
+        return;
       })
       .catch(err => console.error(err.message));
   },

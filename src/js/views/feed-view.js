@@ -18,10 +18,15 @@ const feedView = {
     let prev = data.previous;
     let next = data.next;
     let type = data.type;
+    let prevLink = '';
+
+    if (data.previous !== '') {
+      prevLink = `<a href="#" data-page="${prev}" data-type="${type}" class="pagination__previous" id="page_previous">First</a>`;
+    }
 
     return `
       <div class="pagination">
-        <a href="#" data-page="${prev}" data-type="${type}" class="pagination__previous" id="page_previous">Previous</a>
+        ${prevLink}
         <a href="#" data-page="${next}" data-type="${type}" class="pagination__next" id="page_next">Next</a>
       </div>
     `;
