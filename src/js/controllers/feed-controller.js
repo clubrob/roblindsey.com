@@ -72,6 +72,12 @@ const feedController = {
         res.docs.forEach(item => {
           feedCards.innerHTML += createItem(item, 'card');
         });
+        let paginationOptions = {
+          previous: res.pages.prev,
+          next: res.pages.next,
+          type: `tag/${tag}`,
+        };
+        feedCards.innerHTML += feedView.pagination(paginationOptions);
         return;
       })
       .catch(err => console.error(err.message));

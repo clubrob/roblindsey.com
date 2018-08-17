@@ -115,13 +115,24 @@ gulp.task('cleanHTML', () =>
     .pipe(browser.stream())
 );
 
-gulp.task('optimizeImages', done => {
-  gulp
-    .src('src/images/**/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/images/'));
-  done();
-});
+gulp.task(
+  'optimizeImages',
+  gulp.parallel(
+    function moveIconFiles(done) {
+      gulp
+        .src('src/images/icons/*.{xml,json,ico}')
+        .pipe(gulp.dest('dist/images/icons/'));
+      done();
+    },
+    function optimizeImageFiles(done) {
+      gulp
+        .src('src/images/**/*.{png,gif,jpg,svg}')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images/'));
+      done();
+    }
+  )
+);
 
 gulp.task(
   'serve',
