@@ -4,7 +4,12 @@ const searchView = {
     return `
       <div id="search-form" class="form">
         <input type="text" name="search-term" id="search-term" value="${term}" class="form__input">
-        <button id="search-button" class="form__button">Search</button>
+        <div class="under-search">
+          <button id="search-button" class="form__button">Search</button>
+          <div>
+            <img src="/images/svg/search-by-algolia.svg" alt="Search by Algolia">
+          </div>
+        </div>
       </div>
     `;
   },
