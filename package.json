@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.1.1",
+    "autoprefixer": "^9.1.2",
     "babel-core": "^6.26.3",
     "babel-register": "^6.26.0",
     "browser-sync": "^2.24.6",
