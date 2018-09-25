@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: './src/views',
       output: './dist',
-    }
+    },
+    "markdownTemplateEngine": "njk"
   }
 }

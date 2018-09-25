@@ -9,6 +9,7 @@ html {
 }
 body {
   background-color: $mainBg;
+  font-family: Cabin, sans-serif;
 }
 a {
   text-decoration: none;
@@ -17,174 +18,107 @@ a {
     text-decoration: none;
   }
 }
-section {
-  max-width: 800px;
-}
 .container {
   margin: 0 auto;
   padding: 0 2.5rem;
-}
-
-.title,
-.subtitle {
-  font-family: 'Josefin Sans', Verdana, sans-serif;
-}
-
-.title {
-  font-weight: 700;
-}
-
-.subtitle {
-  font-weight: 300;
 }
 .loader {
   text-align: center;
   padding: 3rem;
 }
 
-.content {
-  li + li {
-    margin-top: 0.25em
-  }
-  p,
-  dl,
-  ol,
-  ul,
-  blockquote,
-  pre,
-  table,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #333;
-    line-height: 1.6;
-  }
-  p, ul, ol, blockquote, pre, .pic-body, .clip-body, .quip-body {
-    font-size: 1.5rem;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
-    &:not(:last-child) {
-      margin-bottom: 1em;
-    }
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
-  }
-  h1 { 
-    font-size: 4.2rem;
-    margin-bottom: 0.5em;
-    &:not(:first-child) {
-      margin-top: 1em;
-    }
-  }
-  h2 { 
-    font-size: 3.5rem;
-    margin-bottom: 0.57em;
-    &:not(:first-child) {
-      margin-top: 1.1em;
-    }
-  }
-  h3 { font-size: 2.8rem;
-    margin-bottom: 0.66em;
-    &:not(:first-child) {
-      margin-top: 1.33em;
-    }
-  }
-  h4 { 
-    font-size: 2.2rem;
-    margin-bottom: .8em;
-  }
-  h5 { 
-    font-size: 1.6rem;
-    margin-bottom: .88em;
-  }
-  h6 { 
-    font-size: 1rem;
+li + li {
+  margin-top: 0.25em
+}
+p,
+dl,
+ol,
+ul,
+blockquote,
+pre,
+table {
+  color: $bodyColor;
+  line-height: 1.6;
+}
+p, ul, ol, blockquote, pre, .pic-body, .clip-body, .quip-body {
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  &:not(:last-child) {
     margin-bottom: 1em;
   }
-  ol {
-    list-style: decimal outside;
-    margin-left: 2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primaryDark;
+}
+h1 { 
+  font-size: 4.2rem;
+  margin-bottom: 0.5em;
+  &:not(:first-child) {
     margin-top: 1em;
   }
+}
+h2 { 
+  font-size: 3.5rem;
+  margin-bottom: 0.57em;
+  &:not(:first-child) {
+    margin-top: 1.1em;
+  }
+}
+h3 { font-size: 2.8rem;
+  margin-bottom: 0.66em;
+  &:not(:first-child) {
+    margin-top: 1.33em;
+  }
+}
+h4 { 
+  font-size: 2.2rem;
+  margin-bottom: .8em;
+}
+h5 { 
+  font-size: 1.6rem;
+  margin-bottom: .88em;
+}
+h6 { 
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+ol {
+  list-style: decimal outside;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+ul {
+  list-style: disc outside;
+  margin-left: 2em;
+  margin-top: 1em;
   ul {
-    list-style: disc outside;
-    margin-left: 2em;
-    margin-top: 1em;
+    list-style-type: circle;
+    margin-top: 0.5em;
     ul {
-      list-style-type: circle;
-      margin-top: 0.5em;
-      ul {
-        list-style-type: square;
-      }
+      list-style-type: square;
     }
   }
-  blockquote {
-    border-left: 5px solid #333;
-    background-color: rgba(0,0,0,0.1);
-    padding: 1.25em 1.5em;
-  }
 }
-.pagination {
-  margin: 1rem;
-    a {
-      display: inline-block;
-      padding: 1rem 2rem;
-      margin-right: 1rem;
-      font-size: 1.3rem;
-      font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      text-transform: uppercase;
-      border: 0;
-      background-color: #e7e7e7;
-      border-radius: 5px;
-      color: $darkGray;
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: #c0c0c0;
-      }
-    }
+blockquote {
+  border-left: 5px solid #333;
+  background-color: rgba(0,0,0,0.1);
+  padding: 1.25em 1.5em;
 }
+
 /* Page specific styles */
 @media screen and (min-width: $tabletBrk) {
-  section#contact, section#feed, section#search, section#work, section#feed__cards, section#work__cards, section#home__cards, section#search__cards {
-    width: 70%;
-    margin: 0 auto;
-  }
-  section#feed__cards, section#work__cards, section#search__cards {
-    padding: 6rem 0;
-  }
-}
-section#feed__cards, section#work__cards, section#home__cards, section#search__cards {
-  padding: 4rem 0;
-  h2 {
-    padding-bottom: 0.5rem;
-  }
-}
-.contact__title, .work__title, .search__title, .feed__title {
-  padding: 4rem 0 0;
-  font-size: 4.7rem;
-}
-.contact__icons {
-  img {
-    width: 80px;
-    height: auto;
-  }
 }
 footer#main-footer {
   text-align: center;
   p {
-    font-family: 'Josefin Sans';
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }

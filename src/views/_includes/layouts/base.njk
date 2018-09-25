@@ -11,6 +11,7 @@
   {% include 'partials/header.njk' %}
   <main>
     {% block content %} {% endblock %}
+    {{ content | safe }}
   </main>
   {% include 'partials/footer.njk' %}
   {% include 'partials/modal.njk' %}

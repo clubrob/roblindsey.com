@@ -1,0 +1,139 @@
+main {
+  padding-top: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+header {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255,255,255,0.8);
+}
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+.logo p {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $primaryDark;
+}
+.botdot {
+  width: 38px;
+  height: 38px;
+  margin-right: 5px;
+  &:hover {
+    animation: botdotRoll 600ms ease-in-out;
+  }
+}
+@keyframes botdotRoll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.twitter-logo, .github-logo, .linkedin-logo, .behance-logo, .codepen-logo, .rss-logo {
+  width: 70px;
+  height: 70px;
+}
+.hero-image img {
+  border: 8px solid $primaryDark;
+}
+.twitter-logo:hover {
+  .twitter-bg {
+    transition: fill 200ms;
+    fill: #55ACEE;
+  }
+  .twitter-fg {
+    transition: fill 200ms;
+    fill: #ffffff;
+  }
+}
+.github-logo:hover {
+  .github-bg {
+    transition: fill 200ms;
+    fill: #ffffff;
+  }
+  .github-fg {
+    transition: fill 200ms;
+    fill: #000000;
+  }
+}
+.linkedin-logo:hover {
+  .linkedin-bg {
+    transition: fill 200ms;
+    fill: #007BB5;
+  }
+  .linkedin-fg {
+    transition: fill 200ms;
+    fill: #ffffff;
+  }
+}
+.behance-logo:hover {
+  .behance-bg {
+    transition: fill 200ms;
+    fill: #0057FF;
+  }
+  .behance-fg {
+    transition: fill 200ms;
+    fill: #ffffff;
+  }
+}
+.codepen-logo:hover {
+  .codepen-bg {
+    transition: fill 200ms;
+    fill: #FFDD40;
+  }
+  .codepen-fg {
+    transition: fill 200ms;
+    fill: #000000;
+  }
+}
+.rss-logo:hover {
+  .rss-bg {
+    transition: fill 200ms;
+    fill: #FF6600;
+  }
+  .rss-fg {
+    transition: fill 200ms;
+    fill: #ffffff;
+  }
+}
+
+.the-latest {
+  padding-top: 80px;
+  max-width: 640px;
+  margin: 0 auto;
+
+  h2 {
+    margin: 0;
+    padding: 0 0 20px 0;
+    font-weight: 700;
+    font-size: 4.5rem;
+    border-bottom: 1px solid #b2b2b2;
+  }
+
+  article {
+    padding-top: 40px;
+    
+    h3 {
+      padding: 0;
+      margin: 0;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+  }
+}
+footer {
+  padding-top: 80px;
+}
