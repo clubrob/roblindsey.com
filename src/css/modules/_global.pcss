@@ -8,15 +8,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  display: grid;
-  grid-template-rows: 70px 1fr auto;
-  min-height: 100vh;
   background-color: $mainBg;
-  background-image: url('../images/svg/mountains.svg');
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-position-x: center;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 a {
   text-decoration: none;
@@ -49,39 +41,7 @@ section {
   text-align: center;
   padding: 3rem;
 }
-.post-corner {
-  background-color: $primary;
-}
-.quip-corner {
-  background-color: $quipColor;
-}
-.pic-corner {
-  background-color: $picColor;
-}
-.clip-corner {
-  background-color: $clipColor;  
-}
-.clip-corner, .pic-corner, .quip-corner, .post-corner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1.1rem;
-  font-style: italic;
-  a {
-    padding: 5px;
-    display: block;
-    color: #fff;
-  }
-}
-.linkout {
-  background-image: url('../images/svg/linkout.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: 4px;
-  display: inline-block;
-  height: 12.86px;
-  width: 15px;
-}
+
 .content {
   li + li {
     margin-top: 0.25em

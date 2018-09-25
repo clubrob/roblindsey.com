@@ -4,7 +4,8 @@ const gulp = require('gulp');
 const del = require('del');
 const imagemin = require('gulp-imagemin');
 // HTML processing modules
-const nunjucks = require('gulp-nunjucks-render');
+const shell = require('gulp-shell');
+// const nunjucks = require('gulp-nunjucks-render');
 // CSS processing modules
 const postcss = require('gulp-postcss');
 const postcssImport = require('postcss-import');
@@ -19,13 +20,16 @@ const webpackStream = require('webpack-stream');
 // Dev browser modules
 const browser = require('browser-sync').create();
 
+var dist = 'dist';
+var src = 'src';
+
 gulp.task('clean:dist', () => {
-  return del(['dist/**/*']);
+  return del([`${dist}/**/*`]);
 });
 
 gulp.task('bundleJSDev', () =>
   gulp
-    .src('src/js/app.js', { sourcemaps: true })
+    .src(`${src}/js/app.js`, { sourcemaps: true })
     .pipe(
       webpackStream({
         mode: 'development',
@@ -37,21 +41,21 @@ gulp.task('bundleJSDev', () =>
           fs: 'empty',
         },
         plugins: [
-          new webpackStream.webpack.EnvironmentPlugin([
+          /*           new webpackStream.webpack.EnvironmentPlugin([
             'ALGOLIA_APP_ID',
             'ALGOLIA_SEARCH_KEY',
             'ALGOLIA_INDEX_NAME',
-          ]),
+          ]), */
         ],
       })
     )
-    .pipe(gulp.dest('dist/js/'))
+    .pipe(gulp.dest(`${dist}/js/`))
     .pipe(browser.stream())
 );
 
 gulp.task('bundleJS', () =>
   gulp
-    .src('src/js/app.js')
+    .src(`${src}/js/app.js`)
     .pipe(
       webpackStream({
         mode: 'production',
@@ -62,22 +66,22 @@ gulp.task('bundleJS', () =>
           fs: 'empty',
         },
         plugins: [
-          new webpackStream.webpack.EnvironmentPlugin([
+          /* new webpackStream.webpack.EnvironmentPlugin([
             'ALGOLIA_APP_ID',
             'ALGOLIA_SEARCH_KEY',
             'ALGOLIA_INDEX_NAME',
-          ]),
+          ]), */
         ],
       })
     )
     .pipe(terser())
-    .pipe(gulp.dest('dist/js/'))
+    .pipe(gulp.dest(`${dist}/js/`))
     .pipe(browser.stream())
 );
 
 gulp.task('bundleCSS', () =>
   gulp
-    .src('src/css/style.css')
+    .src(`${src}/css/style.css`)
     .pipe(
       postcss([
         postcssImport(),
@@ -85,12 +89,9 @@ gulp.task('bundleCSS', () =>
         colorFunction(),
         fontMagic({
           variants: {
-            'Josefin Sans': {
-              '300': [],
-              '700': [],
-            },
-            Roboto: {
+            'Cabin': {
               '400': [],
+              '700': [],
             },
           },
           foundries: ['google'],
@@ -99,36 +100,38 @@ gulp.task('bundleCSS', () =>
       ])
     )
     .pipe(csso())
-    .pipe(gulp.dest('dist/css/'))
+    .pipe(gulp.dest(`${dist}/css/`))
     .pipe(browser.stream())
 );
 
-gulp.task('cleanHTML', () =>
-  gulp
-    .src(['src/views/**/*.njk', '!src/views/**/_*.njk'])
-    .pipe(
-      nunjucks({
-        path: ['src/views'],
-      })
-    )
-    .pipe(gulp.dest('dist/'))
-    .pipe(browser.stream())
-);
+// gulp.task('cleanHTML', () =>
+//   gulp
+//     .src([`${src}/views/**/*.njk`, `!${src}/views/**/_*.njk`])
+//     .pipe(
+//       nunjucks({
+//         path: [`${src}/views`],
+//       })
+//     )
+//     .pipe(gulp.dest(`${dist}/`))
+//     .pipe(browser.stream())
+// );
+
+gulp.task('cleanHTML', shell.task('npx eleventy --quiet'));
 
 gulp.task(
   'optimizeImages',
   gulp.parallel(
-    function moveIconFiles(done) {
-      gulp
-        .src('src/images/icons/*.{xml,json,ico}')
-        .pipe(gulp.dest('dist/images/icons/'));
-      done();
-    },
+    // function moveIconFiles(done) {
+    //   gulp
+    //     .src(`${src}/images/icons/*.{xml,json,ico}`)
+    //     .pipe(gulp.dest(`${dist}/images/icons/`));
+    //   done();
+    // },
     function optimizeImageFiles(done) {
       gulp
-        .src('src/images/**/*.{png,gif,jpg,svg}')
+        .src(`${src}/images/**/*.{png,gif,jpg,svg}`)
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/images/'));
+        .pipe(gulp.dest(`${dist}/images/`));
       done();
     }
   )
@@ -141,15 +144,15 @@ gulp.task(
     function browserSyncInit() {
       browser.init({
         server: {
-          baseDir: './dist',
+          baseDir: `./${dist}`,
         },
       });
 
-      gulp.watch('src/css/**/*.css', gulp.series('bundleCSS'));
-      gulp.watch('src/css/**/*.pcss', gulp.series('bundleCSS'));
-      gulp.watch('src/js/**/*.js', gulp.series('bundleJSDev'));
-      gulp.watch('src/views/**/*.njk', gulp.series('cleanHTML'));
-      gulp.watch('src/images/**/*', gulp.series('optimizeImages'));
+      gulp.watch(`${src}/css/**/*.css`, gulp.series('bundleCSS'));
+      gulp.watch(`${src}/css/**/*.pcss`, gulp.series('bundleCSS'));
+      gulp.watch(`${src}/js/**/*.js`, gulp.series('bundleJSDev'));
+      gulp.watch(`${src}/views/**/*.{njk,md}`, gulp.series('cleanHTML'));
+      gulp.watch(`${src}/images/**/*`, gulp.series('optimizeImages'));
     }
   )
 );
