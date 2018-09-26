@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rob Lindsey Design</title>
-  <link rel="stylesheet" href="/css/style.css">
+  {% set css %}
+    {% include 'postcss/style.pcss' %}
+  {% endset %}
+  <style>{{ css | cssmin | safe }}</style>
 </head>
 <body>
   {% include 'partials/header.njk' %}
@@ -14,7 +17,6 @@
     {{ content | safe }}
   </main>
   {% include 'partials/footer.njk' %}
-  {% include 'partials/modal.njk' %}
   <script src="/js/app.bundle.js"></script>
 </body>
 </html>

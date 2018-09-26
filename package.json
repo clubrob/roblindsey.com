@@ -4,21 +4,21 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "prod": "gulp prod",
-    "now-start": "gulp prod",
-    "watch": "gulp"
+    "build": "npx eleventy",
+    "watch": "npx eleventy --serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.5.3",
+    "@11ty/eleventy-plugin-rss": "^1.0.2",
     "autoprefixer": "^9.1.2",
     "babel-core": "^6.26.3",
     "babel-register": "^6.26.0",
     "browser-sync": "^2.24.6",
+    "csso": "^3.5.1",
+    "dayjs": "^1.7.7",
     "del": "^3.0.0",
     "dotenv": "^6.0.0",
     "gulp": "^4.0.0",
@@ -29,15 +29,17 @@
     "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify-es": "^1.0.4",
+    "html-minifier": "^3.5.20",
+    "postcss": "^7.0.3",
     "postcss-color-function": "^4.0.1",
     "postcss-font-magician": "^2.2.1",
     "postcss-import": "^12.0.0",
     "precss": "^3.1.2",
+    "uglify-js": "^3.4.9",
     "webpack-stream": "^5.1.1"
   },
   "dependencies": {
     "algoliasearch": "^3.30.0",
-    "dayjs": "^1.7.5",
     "marked": "^0.4.0",
     "minireset.css": "0.0.3",
     "normalize.css": "^8.0.0"
