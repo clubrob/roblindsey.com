@@ -5,24 +5,30 @@ title: 'Books'
 
 {% block content %}
 <section class="bookshelf">
-  <h1 class="latest__heading">{{ title }}</h1>
-  <div class="books">
-    {% for book in books.read %}
-      <div class="book">
-        <div class="book__image">
-          <a href="{{ book.url }}"><img src="{{ book.ISBN | bookCover }}" alt="{{ book.title }}"></a>
-        </div>
-        <h4 class="book__title">
-          {{ book.title }}
-        </h4>
-        <div class="book__response">
-          <p class="book__rating">
-            {{ book.rating | ratingToStars }}
-          </p>
-          <p class="book__review">
-            {{ book.review }}
-          </p>
-        </div>
+  <div class="content">
+    <h1 class="latest__heading">{{ title }}</h1>
+    <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
+    {% for year in books.read %}
+      <h3>{{ year.year }}</h3>
+      <div class="books">
+        {% for book in year.books %}
+          <div class="book">
+            <div class="book__image">
+              <a target="_blank" href="{{ book.isbn | bookUrl }}"><img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}"></a>
+            </div>
+            <h4 class="book__title">
+              {{ book.title }}
+            </h4>
+            <div class="book__response">
+              <p class="book__rating">
+                {{ book.rating | ratingToStars }}
+              </p>
+{#               <p class="book__review">
+                {{ book.review }}
+              </p> #}
+            </div>
+          </div>
+        {% endfor %}
       </div>
     {% endfor %}
   </div>

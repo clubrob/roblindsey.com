@@ -1,17 +1,17 @@
 ---
 permalink: feed.xml
 metadata:
-  title: My Blog Title
-  url: http://example.com/
+  title: Rob Lindsey - Posts
+  url: https://roblindsey.com/posts
   author:
-    name: My Name
-    email: myemailaddress@example.com
+    name: Rob Lindsey
+    email: rob@roblindsey.com
   feed:
-    subtitle: I am writing about my experiences as a naval navel-gazer.
+    subtitle: Technologist writing about a bunch of stuff.
     filename: feed.xml
     path: feed/feed.xml
-    url: https://example.com/feed.xml
-    id: https://example.com/
+    url: https://roblindsey.com/feed.xml
+    id: https://roblindsey.com/
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -19,7 +19,7 @@ metadata:
   <subtitle>{{ metadata.feed.subtitle }}</subtitle>
   <link href="{{ metadata.feed.url }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-{#   <updated>{{ collections.posts | rssLastUpdatedDate }}</updated> #}
+  <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>

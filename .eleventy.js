@@ -15,6 +15,11 @@ module.exports = eleventyConfig => {
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(rss);
+  // Passthrough
+  eleventyConfig
+    .addPassthroughCopy('src/assets');
+  eleventyConfig
+    .addPassthroughCopy('src/sw.js');
 
   // Filters
   eleventyConfig.addFilter('parseDate', dateObj => {
@@ -24,7 +29,11 @@ module.exports = eleventyConfig => {
     return day(dateObj).format('D MMMM, YYYY');
   });
   eleventyConfig.addFilter('bookCover', isbn => {
-    return `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
+    // return `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
+    return `https://images-na.ssl-images-amazon.com/images/P/${isbn}.01._SCLZZZZZZZ_.jpg-M.jpg`;
+  });
+  eleventyConfig.addFilter('bookUrl', isbn => {
+    return `https://www.goodreads.com/book/isbn/${isbn}`;
   });
 
   eleventyConfig.addFilter('ratingToStars', num => {
@@ -57,16 +66,17 @@ module.exports = eleventyConfig => {
   });
 
   // Collections
+  eleventyConfig.addCollection('posts', collection => {
+    return collection
+      .getFilteredByGlob('**/posts/*.md')
+      .reverse();
+  });
   eleventyConfig.addCollection('latestPosts', collection => {
     return collection
       .getFilteredByGlob('**/posts/*.md')
       .slice(-2)
       .reverse();
   });
-
-  // Misc
-  eleventyConfig
-    .addPassthroughCopy('src/assets');
 
   return {
     templateFormats: ['njk', 'md'],

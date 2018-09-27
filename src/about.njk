@@ -1,23 +1,7 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<section class="home">
-  <div class="hero">
-    <img class="hero__image" srcset="/assets/images/global/blue-ridge-mountains.jpg" alt="Blue Ridge Mountains">
-  </div>
-  {% include 'partials/social.njk' %}
-  <div class="latest">
-    <h2 class="latest__heading">The Latest</h2>
-    {% for entry in collections.latestPosts %}
-      <article class="latest__article">
-          <h3 class="latest__article__heading">
-            <a href="{{entry.url}}">{{ entry.data.title }}</a>
-          </h3>
-          <p class="latest__article__text">
-            {{ entry.data.description }}
-          </p>
-      </article>
-    {% endfor %}
-  </div>
+<section class="about">
+  <div class="content"></div>
 </section>
 {% endblock %}
