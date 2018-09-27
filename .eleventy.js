@@ -1,3 +1,6 @@
+// 11ty plugins
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const rss = require('@11ty/eleventy-plugin-rss');
 // String manipulation
 const day = require('dayjs');
 // CSS processing
@@ -9,10 +12,27 @@ const fontMagic = require('postcss-font-magician');
 const csso = require('csso');
 
 module.exports = eleventyConfig => {
+  // Plugins
+  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(rss);
 
   // Filters
   eleventyConfig.addFilter('parseDate', dateObj => {
     return day(dateObj).format('YYYY/MM/DD');
+  });
+  eleventyConfig.addFilter('parseDateReadable', dateObj => {
+    return day(dateObj).format('D MMMM, YYYY');
+  });
+  eleventyConfig.addFilter('bookCover', isbn => {
+    return `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
+  });
+
+  eleventyConfig.addFilter('ratingToStars', num => {
+    let stars = '';
+    for (let i = 0; i < num; i++) {
+      stars += '★';
+    }
+    return stars;
   });
   eleventyConfig.addNunjucksAsyncFilter('cssmin', (cssCode, cb) => {
     // return csso.minify(cssCode).css;
@@ -44,6 +64,7 @@ module.exports = eleventyConfig => {
       .reverse();
   });
 
+  // Misc
   eleventyConfig
     .addPassthroughCopy('src/assets');
 

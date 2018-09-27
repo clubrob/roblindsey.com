@@ -23,6 +23,8 @@ html {
 body {
   background-color: var(--color-primary-0);
   font-family: var(--font-family);
+  font-size: 1.6rem;
+  line-height: 1.7;
 }
 main {
   padding-top: 100px;
@@ -34,6 +36,10 @@ header {
   width: 100%;
   background-color: rgba(255,255,255,0.8);
 }
+img {
+  width: 100%;
+  height: auto;
+}
 a {
   text-decoration: none;
   color: var(--color-primary-50);
@@ -41,6 +47,9 @@ a {
   &:hover {
     color: var(--color-primary-90);
   }
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
 }
 footer {
   padding-top: 80px;
@@ -102,10 +111,55 @@ footer {
   font-size: 2.4rem;
   font-weight: 700;
 }
-.latest__article__text {
-  font-size: 1.6rem;
-  line-height: 1.5;
+/* .latest__article__text {
+} */
+.post {
+  max-width: 640px;
+  * {
+    line-height: 1.7;
+  }
+  p, ul, ol, blockquote {
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+  ol, ul {
+    padding-left: 3rem;
+  }
+  ul {
+    list-style: disc;
+  }
+  pre[class*="language-"] {
+    font-size: 1.4rem;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3.7rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  blockquote {
+    font-style: italic;
+    background: var(--color-light-gray);
+    padding: 2.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }
+.post__date {
+  color: #aaa;
+  font-size: 1.5rem;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-gap: 2rem;
+  padding-top: 80px;
+}
+
 /* Component Styles */
 .svg-logo {
   width: 70px;

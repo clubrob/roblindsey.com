@@ -1,0 +1,30 @@
+---
+title: 'Books'
+---
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<section class="bookshelf">
+  <h1 class="latest__heading">{{ title }}</h1>
+  <div class="books">
+    {% for book in books.read %}
+      <div class="book">
+        <div class="book__image">
+          <a href="{{ book.url }}"><img src="{{ book.ISBN | bookCover }}" alt="{{ book.title }}"></a>
+        </div>
+        <h4 class="book__title">
+          {{ book.title }}
+        </h4>
+        <div class="book__response">
+          <p class="book__rating">
+            {{ book.rating | ratingToStars }}
+          </p>
+          <p class="book__review">
+            {{ book.review }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

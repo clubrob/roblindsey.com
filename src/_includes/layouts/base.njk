@@ -7,6 +7,7 @@
   <title>Rob Lindsey Design</title>
   {% set css %}
     {% include 'postcss/style.pcss' %}
+    {% include 'postcss/prism.css' %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
 </head>
@@ -14,9 +15,8 @@
   {% include 'partials/header.njk' %}
   <main>
     {% block content %} {% endblock %}
-    {{ content | safe }}
   </main>
   {% include 'partials/footer.njk' %}
-  <script src="/js/app.bundle.js"></script>
+  {# <script src="/js/app.bundle.js"></script> #}
 </body>
 </html>
