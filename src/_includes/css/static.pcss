@@ -1,0 +1,54 @@
+.home, .about, .bookshelf {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.3rem, 1fr));
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+.hero {
+  border: 8px solid var(--color-primary-90);
+}
+.latest {
+  padding-top: 80px;
+}
+.read-more {
+  display: flex;
+  justify-content: flex-end;
+}
+.svg-logo {
+  width: 70px;
+  height: 70px;
+}
+.svg-bg, .svg-fg {
+  transition: fill 200ms ease-in-out;
+}
+.twitter-logo:hover .twitter-bg {
+  fill: #55ACEE;
+}
+.linkedin-logo:hover .linkedin-bg {
+  fill: #007BB5;
+}
+.behance-logo:hover .behance-bg {
+  fill: #0057FF;
+}
+.codepen-logo:hover .codepen-bg {
+  fill: #FFDD40;
+}
+.rss-logo:hover .rss-bg {
+  fill: #FF6600;
+}
+.twitter-logo:hover .twitter-fg,
+.github-logo:hover .github-bg,
+.linkedin-logo:hover .linkedin-fg,
+.behance-logo:hover .behance-fg,
+.rss-logo:hover .rss-fg {
+  fill: #ffffff;
+}
+.github-logo:hover .github-fg,
+.codepen-logo:hover .codepen-fg {
+  fill: #000000;
+}

@@ -1,4 +1,7 @@
 node_modules/
 www/
-automate/
+automate/credentials.json
+automate/token.json
+automate/package-lock.json
+automate/node_modules/
 .env

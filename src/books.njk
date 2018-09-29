@@ -3,34 +3,40 @@ title: 'Books'
 ---
 {% extends 'layouts/base.njk' %}
 
+{% block styleBlock %}
+  {% set extraCss %}
+    {% include 'css/static.pcss' %}
+    {% include 'css/books.pcss' %}
+  {% endset %}
+  <style>{{ extraCss | cssmin | safe }}</style>
+{% endblock %}
+
 {% block content %}
 <section class="bookshelf">
-  <div class="content">
-    <h1 class="latest__heading">{{ title }}</h1>
-    <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
-    {% for year in books.read %}
-      <h3>{{ year.year }}</h3>
-      <div class="books">
-        {% for book in year.books %}
-          <div class="book">
-            <div class="book__image">
-              <a target="_blank" href="{{ book.isbn | bookUrl }}"><img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}"></a>
-            </div>
-            <h4 class="book__title">
-              {{ book.title }}
-            </h4>
-            <div class="book__response">
-              <p class="book__rating">
-                {{ book.rating | ratingToStars }}
-              </p>
-{#               <p class="book__review">
-                {{ book.review }}
-              </p> #}
-            </div>
+  <h1 class="bookshelf__heading">{{ title }}</h1>
+  <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
+  {% for year in books.read %}
+    <h3>{{ year.year }}</h3>
+    <div class="books">
+      {% for book in year.books %}
+        <div class="book">
+          <div class="book__image">
+            <a target="_blank" href="{{ book.isbn | bookUrl }}"><img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}"></a>
           </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  </div>
+          <h4 class="book__title">
+            {{ book.title }}
+          </h4>
+          <div class="book__response">
+            <p class="book__rating">
+              <small>My rating: {{ book.rating | ratingToStars }}</small>
+            </p>
+{#               <p class="book__review">
+              {{ book.review }}
+            </p> #}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
 </section>
 {% endblock %}

@@ -10,6 +10,8 @@ const precss = require('precss');
 const autoprefixer = require('autoprefixer');
 const fontMagic = require('postcss-font-magician');
 const csso = require('csso');
+// HTML processing
+const htmlmin = require('html-minifier');
 
 module.exports = eleventyConfig => {
   // Plugins
@@ -20,6 +22,19 @@ module.exports = eleventyConfig => {
     .addPassthroughCopy('src/assets');
   eleventyConfig
     .addPassthroughCopy('src/sw.js');
+
+  // Transforms
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+    if (outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+      return minified;
+    }
+    return content;
+  });
 
   // Filters
   eleventyConfig.addFilter('parseDate', dateObj => {
@@ -46,19 +61,22 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksAsyncFilter('cssmin', (cssCode, cb) => {
     // return csso.minify(cssCode).css;
     return postcss([
-      postcssImport, 
-      precss, 
-      fontMagic({
-        variants: {
-          'Cabin': {
-            '400': [],
-            '700': [],
+        postcssImport,
+        precss,
+        fontMagic({
+          variants: {
+            'Cabin': {
+              '400': [],
+              '700': [],
+            },
           },
-        },
-        foundries: ['google'],
-      }),
-      autoprefixer])
-      .process(cssCode, {from: undefined})
+          foundries: ['google'],
+        }),
+        autoprefixer
+      ])
+      .process(cssCode, {
+        from: undefined
+      })
       .then(result => {
         return cb(null, csso.minify(result.css).css);
       })

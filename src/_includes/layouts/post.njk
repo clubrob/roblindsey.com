@@ -1,13 +1,23 @@
 {% extends 'layouts/base.njk' %}
 
+{% block styleBlock %}
+  {% set prismCss %}
+    {% include 'css/prism.css' %}
+    {% include 'css/components/post.pcss' %}
+  {% endset %}
+  <style>{{ prismCss | cssmin | safe }}</style>
+{% endblock %}
+
 {% block content %}
   <section class="posts">
-    <div class="content">
-      <article class="post">
-        <h1>{{ title }}</h1>
+    <article class="post">
+      <header class="post__header">
+        <h1 class="post__title">{{ title }}</h1>
         <p class="post__date">{{ date | parseDateReadable }}</p>
+      </header>
+      <div class="post__content">
         {{ content | safe }}
-      </article>
-    </div>
+      </div>
+    </article>
   </section>
 {% endblock %}

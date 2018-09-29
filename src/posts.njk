@@ -1,0 +1,31 @@
+---
+permalink: posts/index.html
+---
+{% extends 'layouts/base.njk' %}
+
+{% block styleBlock %}
+  {% set extraCss %}
+    {% include 'css/static.pcss' %}
+    {% include 'css/components/post-list.pcss' %}
+  {% endset %}
+  <style>{{ extraCss | cssmin | safe }}</style>
+{% endblock %}
+
+{% block content %}
+  <section class="post_list">
+    {% for entry in collections.posts %}
+      <h1 class="post_list__heading">Posts Archive</h1>
+        <article class="post_list__post">
+            <h3 class="post_list__post__heading">
+              <a href="{{entry.url}}">{{ entry.data.title }}</a>
+            </h3>
+              <p class="post_list__post__date">
+                {{ entry.date | parseDateReadable }}
+              </p>
+            <p class="post_list__post__text">
+              {{ entry.data.description }}
+            </p>
+        </article>
+    {% endfor %}
+  </section>
+{% endblock %}
