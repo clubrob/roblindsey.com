@@ -5,3 +5,4 @@ automate/token.json
 automate/package-lock.json
 automate/node_modules/
 .env
+src/now.json
