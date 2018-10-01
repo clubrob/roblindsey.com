@@ -65,7 +65,7 @@ module.exports = eleventyConfig => {
     return postcss([
         postcssImport,
         precss,
-        fontMagic({
+        /* fontMagic({
           variants: {
             'Cabin': {
               '400': [],
@@ -74,7 +74,7 @@ module.exports = eleventyConfig => {
           },
           display: 'swap',
           foundries: ['google'],
-        }),
+        }), */
         autoprefixer
       ])
       .process(cssCode, {
