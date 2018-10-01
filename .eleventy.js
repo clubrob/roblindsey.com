@@ -72,6 +72,7 @@ module.exports = eleventyConfig => {
               '700': [],
             },
           },
+          display: 'swap',
           foundries: ['google'],
         }),
         autoprefixer
