@@ -53,8 +53,35 @@ a {
 h1,h2,h3,h4 {
   font-weight: 700;
 }
+figure {
+  position: relative;
+  overflow: hidden;
+  img {
+    display: block;
+  }
+  &:hover {
+    figcaption {
+      opacity: 1;
+      bottom: 0;
+      background-color: rgba(255,255,255,0.7);
+    }
+  }
+}
+figcaption {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  background-color: rgba(255,255,255,0);
+  transition: opacity 300ms ease-in-out;
+  padding: 1rem;
+  color: var(--color-dark-gray);
+  font-size: 1.3rem;
+  a {
+    color: var(--color-primary-90);
+  }
+}
 footer {
-  padding: 8rem 0 1.3rem;
+  padding: 8rem 1rem 1.3rem;
   p {
     text-align: center;
     font-size: 1.3rem;
@@ -102,30 +129,3 @@ small {
   font-size: 1.1rem;
 }
 
-figure {
-  position: relative;
-  overflow: hidden;
-  img {
-    display: block;
-  }
-  &:hover {
-    figcaption {
-      opacity: 1;
-      bottom: 0;
-      background-color: rgba(255,255,255,0.7);
-    }
-  }
-}
-figcaption {
-  position: absolute;
-  width: 100%;
-  opacity: 0;
-  background-color: rgba(255,255,255,0);
-  transition: opacity 300ms ease-in-out;
-  padding: 1rem;
-  color: var(--color-dark-gray);
-  font-size: 1.3rem;
-  a {
-    color: var(--color-primary-90);
-  }
-}
