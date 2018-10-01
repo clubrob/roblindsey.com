@@ -1,0 +1,37 @@
+{% extends 'layouts/base.njk' %}
+
+{% block styleBlock %}
+  {% set extraCss %}
+    {% include 'css/static.pcss' %}
+    {% include 'css/components/form.pcss' %}
+  {% endset %}
+  <style>{{ extraCss | cssmin | safe }}</style>
+{% endblock %}
+
+{% block content %}
+<section class="contact">
+  <h1>Contact Me</h1>
+  <form action="https://send.pageclip.co/MrqeT0nE0xy3AOtTUeKIMkGoceBB7RbM/RLD-Contact" class="pageclip-form" method="post">
+    <label for="name">Your Name</label>
+    <input type="text" name="name" value="" required />
+    <label for="email">Your Email</label>
+    <input type="email" name="email" value="" required />
+    <label for="body">Your Message</label>
+    <textarea name="body" required></textarea>
+    <!-- This button will have a loading spinner. Keep the inner span for best results. -->
+    <button type="submit" class="pageclip-form__submit form__button">
+      <span>Send</span>
+    </button>
+  </form>
+</section>
+{% endblock %}
+
+{% block scriptBlock %}
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+  <script>
+    var form = document.querySelector('.pageclip-form');
+    Pageclip.form(form, {
+      successTemplate: `<span class="success-message">Thanks for the message! I'll get back to you soon.</span>`
+    });
+  </script>
+{% endblock %}
