@@ -1,5 +1,5 @@
 ---
-title: 'Books'
+title: Books
 ---
 {% extends 'layouts/base.njk' %}
 
@@ -13,7 +13,7 @@ title: 'Books'
 
 {% block content %}
 <section class="bookshelf">
-  <h1 class="bookshelf__heading">{{ title }}</h1>
+  <h1 class="page-heading">{{ title }}</h1>
   <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
   {% for year in books.read %}
     <h3>{{ year.year }}</h3>
