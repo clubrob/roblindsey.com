@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "build": "npx eleventy",
-    "watch": "npx eleventy --serve"
+    "watch": "npx eleventy --serve",
+    "books": "cd automate && node books.js > ../src/_data/books.json",
+    "deploy": "cd www && now && now alias"
   },
   "keywords": [],
   "author": "",

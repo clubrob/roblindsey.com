@@ -24,15 +24,13 @@ title: Books
             <a target="_blank" href="{{ book.isbn | bookUrl }}"><img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}"></a>
           </div>
           <h4 class="book__title">
-            {{ book.title }}
+            <a target="_blank" href="{{ book.isbn | bookUrl }}">{{ book.title }}</a>
           </h4>
+          <p class="book__author"><small>{{ book.author }}</small></p>
           <div class="book__response">
             <p class="book__rating">
               <small>My rating: {{ book.rating | ratingToStars }}</small>
             </p>
-{#               <p class="book__review">
-              {{ book.review }}
-            </p> #}
           </div>
         </div>
       {% endfor %}
