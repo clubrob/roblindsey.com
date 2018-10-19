@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx eleventy",
     "watch": "npx eleventy --serve",
-    "books": "cd automate && node books.js > ../src/_data/books.json",
+    "books": "cd automate && node books.js",
     "deploy": "cd www && now && now alias"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "csso": "^3.5.1",
     "dayjs": "^1.7.7",
     "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "html-minifier": "^3.5.20",
