@@ -4,5 +4,6 @@ automate/credentials.json
 automate/token.json
 automate/package-lock.json
 automate/node_modules/
+automate/books.old.js
 .env
 src/now.json
