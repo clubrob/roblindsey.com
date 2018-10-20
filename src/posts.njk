@@ -13,8 +13,8 @@ permalink: posts/index.html
 
 {% block content %}
   <section class="post_list">
+    <h1 class="post_list__heading">Posts Archive</h1>
     {% for entry in collections.posts %}
-      <h1 class="post_list__heading">Posts Archive</h1>
         <article class="post_list__post">
             <h3 class="post_list__post__heading">
               <a href="{{entry.url}}">{{ entry.data.title }}</a>
