@@ -38,6 +38,11 @@ module.exports = eleventyConfig => {
     return content;
   });
 
+  // Shortcodes
+  eleventyConfig.addNunjucksShortcode('theYear', function() {
+    return day(new Date()).format('YYYY');
+  });
+
   // Filters
   eleventyConfig.addFilter('parseDate', dateObj => {
     return day(dateObj).format('YYYY/MM/DD');

@@ -23,6 +23,7 @@
   --color-primary-50: #219653;
   --color-primary-20: #67CC89;
   --color-primary-90: #02190A;
+  --color-primary-link: #156539;
   --color-body-text: #2F3A32;
   --color-dark-gray: #4f4f4f;
   --color-light-gray: #efefef;
@@ -66,12 +67,11 @@ figure {
 }
 
 a {
-  text-decoration: none;
-  color: var(--color-primary-50);
+  color: var(--color-primary-link);
   transition: color 200ms;
 
   &:hover {
-    color: var(--color-primary-90);
+    color: var(--color-primary-50);
   }
 }
 
@@ -184,4 +184,9 @@ blockquote {
 
 small {
   font-size: 1.1rem;
+}
+
+.icon-link {
+  text-decoration: none;
+  color: unset;
 }
