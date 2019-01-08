@@ -23,6 +23,8 @@ module.exports = eleventyConfig => {
   eleventyConfig
     .addPassthroughCopy('src/sw.js');
   eleventyConfig
+    .addPassthroughCopy('src/manifest.json');
+  eleventyConfig
     .addPassthroughCopy('src/now.json');
 
   // Transforms
@@ -66,20 +68,9 @@ module.exports = eleventyConfig => {
     return stars;
   });
   eleventyConfig.addNunjucksAsyncFilter('cssmin', (cssCode, cb) => {
-    // return csso.minify(cssCode).css;
     return postcss([
         postcssImport,
         precss,
-        /* fontMagic({
-          variants: {
-            'Cabin': {
-              '400': [],
-              '700': [],
-            },
-          },
-          display: 'swap',
-          foundries: ['google'],
-        }), */
         autoprefixer
       ])
       .process(cssCode, {

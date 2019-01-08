@@ -123,10 +123,10 @@ function appendToSheet(auth, spreadsheetID, array) {
   // Returns promise
   return sheets.spreadsheets.values.append({
     spreadsheetId: spreadsheetID,
-    range: '2018',
+    range: '2019',
     valueInputOption: 'RAW',
     resource: {
-      range: '2018',
+      range: '2019',
       majorDimension: 'ROWS',
       values: array,
     },
@@ -215,7 +215,7 @@ function updateSheet(auth) {
       return sortSheet(auth, grSheetId, sheet2018);
     })
     .then(() => {
-      const ranges = ['2018', '2017', '2016'];
+      const ranges = ['2019', '2018', '2017'];
       return getSheetValues(auth, grSheetId, ranges);
     })
     .then(res => {
