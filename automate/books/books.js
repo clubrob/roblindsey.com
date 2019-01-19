@@ -77,7 +77,7 @@ function getNewToken(oAuth2Client, callback) {
 
 // Helper function for getting date of last book in books.json
 function getLastDateRead() {
-  let booksJSON = require('../src/_data/books.json');
+  let booksJSON = require('../../src/_data/books.json');
   let dateRead = dayjs(booksJSON.read[0].books[0].dateRead).format(
     'YYYY/MM/DD'
   );
@@ -195,7 +195,7 @@ function writeBooksJSON(sheetData) {
   const jsonString = JSON.stringify(books);
 
   // Write JSON file
-  fs.writeFile('../src/_data/books.json', jsonString, err => {
+  fs.writeFile('../../src/_data/books.json', jsonString, err => {
     if (err) {
       console.log(err);
     }
@@ -211,8 +211,8 @@ function updateSheet(auth) {
       return appendToSheet(auth, grSheetId, res);
     })
     .then(() => {
-      const sheet2018 = 1849336083;
-      return sortSheet(auth, grSheetId, sheet2018);
+      const sheet2019 = 1668948671;
+      return sortSheet(auth, grSheetId, sheet2019);
     })
     .then(() => {
       const ranges = ['2019', '2018', '2017'];

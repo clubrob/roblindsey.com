@@ -52,12 +52,14 @@ body {
 }
 /* Blocks */
 main {
-  padding: 100px 10% 0;
+  padding: 40px 0 20px;
   min-width: 0;
 }
 
-header {
+header.topbar {
   z-index: 9999;
+  display: flex;
+  justify-content: space-between;
 }
 
 img,
@@ -115,7 +117,7 @@ figcaption {
 }
 
 footer {
-  padding: 8rem 4rem 2rem;
+  padding: 4rem 4rem 2rem;
 
   p {
     text-align: center;
@@ -185,8 +187,16 @@ blockquote {
 small {
   font-size: 1.1rem;
 }
-
 .icon-link {
   text-decoration: none;
-  color: unset;
+}
+@media screen and (min-width: 768px) {
+  .icon-link {
+    color: unset;
+    filter: grayscale(1);
+    transition: filter 200ms ease-in-out;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
 }

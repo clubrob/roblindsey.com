@@ -4,7 +4,11 @@ date: 2018-10-20T16:22:20Z
 description: GoodReads API, Google Sheets API, Node, and me.
 ---
 <figure>
-  <img src="/assets/images/posts/2018/susan-yin-647448-unsplash.jpg" alt="Books on books on shelves.">
+  <img 
+    src="/assets/images/posts/2018/susan-yin-647448-unsplash-800.jpg" 
+    alt="Books on books on shelves."
+    srcset="/assets/images/posts/2018/susan-yin-647448-unsplash-800.jpg 800w, /assets/images/posts/2018/susan-yin-647448-unsplash-375.jpg 375w"
+  >
   <figcaption>Photo by <a href="https://unsplash.com/photos/2JIvboGLeho?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Susan Yin</a> on Unsplash.</figcaption>
 </figure>
 
