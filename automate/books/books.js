@@ -49,12 +49,12 @@ function authorize(credentials, callback) {
 function getNewToken(oAuth2Client, callback) {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: 'offline',
-    scope: SCOPES,
+    scope: SCOPES
   });
   console.log('Authorize this app by visiting this url:', authUrl);
   const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
+    output: process.stdout
   });
   rl.question('Enter the code from that page here: ', code => {
     rl.close();
@@ -108,7 +108,7 @@ function getGoodReadsData(lastDate) {
           review.book.authors.author.name._text,
           review.book.isbn._text,
           review.rating._text,
-          dayjs(dateRead).format('YYYY/MM/DD'),
+          dayjs(dateRead).format('YYYY/MM/DD')
         ];
       });
 
@@ -128,8 +128,8 @@ function appendToSheet(auth, spreadsheetID, array) {
     resource: {
       range: '2019',
       majorDimension: 'ROWS',
-      values: array,
-    },
+      values: array
+    }
   });
 }
 
@@ -146,18 +146,18 @@ function sortSheet(auth, spreadsheetID, sheetID) {
             range: {
               sheetId: sheetID,
               startRowIndex: 0,
-              startColumnIndex: 0,
+              startColumnIndex: 0
             },
             sortSpecs: [
               {
                 dimensionIndex: 4,
-                sortOrder: 'DESCENDING',
-              },
-            ],
-          },
-        },
-      ],
-    },
+                sortOrder: 'DESCENDING'
+              }
+            ]
+          }
+        }
+      ]
+    }
   });
 }
 
@@ -167,7 +167,7 @@ function getSheetValues(auth, spreadsheetID, ranges) {
   // Returns promise
   return sheets.spreadsheets.values.batchGet({
     spreadsheetId: spreadsheetID,
-    ranges: ranges,
+    ranges: ranges
   });
 }
 
@@ -185,7 +185,7 @@ function writeBooksJSON(sheetData) {
         author: row[1],
         isbn: row[2],
         rating: row[3],
-        dateRead: row[4],
+        dateRead: row[4]
       };
     });
     return yearObj;
