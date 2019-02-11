@@ -24,8 +24,6 @@ module.exports = eleventyConfig => {
     .addPassthroughCopy('src/sw.js');
   eleventyConfig
     .addPassthroughCopy('src/manifest.json');
-  eleventyConfig
-    .addPassthroughCopy('src/now.json');
 
   // Transforms
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
