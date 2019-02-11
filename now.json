@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "rob-lindsey-com",
+  "alias": [
+    "roblindsey.com",
+    "www.roblindsey.com"
+  ],
+  "builds": [
+    { 
+      "src": "package.json", 
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "www"
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/assets/images/global/.*", "headers": {"cache-control": "s-maxage=31536000"} },
+    { "src": "/assets/fonts/.*", "headers": {"cache-control": "s-maxage=31536000"} }
+  ]
+}

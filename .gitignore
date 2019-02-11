@@ -1,11 +1,9 @@
-node_modules/
-www/
+node_modules
+www
 
-automate/node_modules/
-automate/package-lock.json
+automate/node_modules
 
 automate/books/token.json
 automate/books/credentials.json
 automate/books/books.old.js
 .env
-src/now.json
