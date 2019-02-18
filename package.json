@@ -15,11 +15,11 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
-    "@11ty/eleventy-plugin-rss": "^1.0.5",
+    "@11ty/eleventy-plugin-rss": "^1.0.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
     "autoprefixer": "^9.4.7",
     "csso": "^3.5.1",
-    "dayjs": "^1.8.5",
+    "dayjs": "^1.8.6",
     "html-minifier": "^3.5.21",
     "postcss": "^7.0.14",
     "postcss-color-function": "^4.0.1",
