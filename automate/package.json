@@ -10,12 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "airtable": "^0.5.8",
-    "dayjs": "^1.8.0",
-    "googleapis": "^37.1.0",
+    "airtable": "^0.5.9",
+    "dayjs": "^1.8.8",
+    "googleapis": "^37.2.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2",
+    "request-promise": "^4.2.4",
     "sharp": "^0.21.3",
-    "xml-js": "^1.6.9"
+    "xml-js": "^1.6.11"
   }
 }
