@@ -23,7 +23,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("src/manifest.json");
 
   // Transforms
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
@@ -36,7 +36,7 @@ module.exports = eleventyConfig => {
   });
 
   // Shortcodes
-  eleventyConfig.addNunjucksShortcode("theYear", function() {
+  eleventyConfig.addNunjucksShortcode("theYear", function () {
     return day(new Date()).format("YYYY");
   });
 
