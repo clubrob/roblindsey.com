@@ -4,11 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "npx eleventy --serve",
     "build": "npx eleventy",
     "now-build": "npx eleventy",
-    "watch": "npx eleventy --serve",
-    "books": "cd automate/books && node books.js",
-    "deploy": "cd www && now && now alias"
+    "books": "cd automate/books && node books.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +19,7 @@
     "autoprefixer": "^9.5.0",
     "csso": "^3.5.1",
     "dayjs": "^1.8.11",
-    "html-minifier": "^3.5.21",
+    "html-minifier": "^4.0.0",
     "postcss": "^7.0.14",
     "postcss-color-function": "^4.0.1",
     "postcss-font-magician": "^2.2.1",
