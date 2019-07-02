@@ -16,7 +16,7 @@ title: Books
   <h1 class="page-heading">{{ title }}</h1>
   <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
   {% for year in books %}
-    <h3 class="bookshelf__year">{{ year.year }}</h3>
+    <h3 class="bookshelf__year">{{ year.year }} <span class="bookshelf__count">Total: {{ year.books.length }}</span></h3>
     <div class="books">
       {% for book in year.books %}
         <div class="book">

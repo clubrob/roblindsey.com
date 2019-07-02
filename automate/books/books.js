@@ -7,7 +7,7 @@ const dayjs = require('dayjs');
 function getGoodReadsData() {
   // Returns promise
   return rp(
-    'https://www.goodreads.com/review/list/1665822.xml?key=AoMooNgSusmmmJbD1az9lg&v=2&shelf=read&sort=date_read&per_page=100'
+    'https://www.goodreads.com/review/list/1665822.xml?key=AoMooNgSusmmmJbD1az9lg&v=2&shelf=read&sort=date_read&per_page=150'
   )
     .then(body => {
       var jsonString = convert.xml2json(body, { compact: true, spaces: 2 });
@@ -36,7 +36,7 @@ function getGoodReadsData() {
         } else if (books[bookIndex].year === yearRead) {
           books[bookIndex].books.push(bookObj);
         } else if (books[bookIndex].year !== yearRead) {
-          if (bookIndex < 2) {
+          if (bookIndex < 2) { // Limits to three years
             bookIndex++;
             books[bookIndex] = {};
             books[bookIndex].year = yearRead;
