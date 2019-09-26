@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.8.14",
+    "dayjs": "^1.8.16",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "xml-js": "^1.6.11"
