@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.8.16",
+    "dayjs": "^1.8.17",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4",
+    "request-promise": "^4.2.5",
     "xml-js": "^1.6.11"
   }
 }

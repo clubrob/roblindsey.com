@@ -16,19 +16,19 @@
     "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "autoprefixer": "^9.6.1",
-    "csso": "^3.5.1",
-    "dayjs": "^1.8.16",
+    "autoprefixer": "^9.7.1",
+    "csso": "^4.0.2",
+    "dayjs": "^1.8.17",
     "html-minifier": "^4.0.0",
-    "postcss": "^7.0.18",
-    "postcss-color-function": "^4.0.1",
-    "postcss-font-magician": "^2.2.2",
+    "postcss": "^7.0.21",
+    "postcss-color-function": "^4.1.0",
+    "postcss-font-magician": "^2.3.0",
     "postcss-import": "^12.0.1",
     "precss": "^4.0.0",
-    "uglify-js": "^3.6.0"
+    "uglify-js": "^3.6.8"
   },
   "dependencies": {
-    "minireset.css": "0.0.5",
+    "minireset.css": "^0.0.6",
     "normalize.css": "^8.0.1"
   }
 }
