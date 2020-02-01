@@ -12,6 +12,7 @@ function getGoodReadsData() {
     .then(body => {
       var jsonString = convert.xml2json(body, { compact: true, spaces: 2 });
       var booksRaw = JSON.parse(jsonString).GoodreadsResponse.reviews.review;
+
       var books = [];
       var bookIndex = 0;
 
@@ -25,6 +26,7 @@ function getGoodReadsData() {
           author: book.book.authors.author.name._text,
           isbn: book.book.isbn._text,
           rating: book.rating._text,
+          imgUrl: book.book.image_url._text,
           dateRead: dayjs(dateRead).format('YYYY/MM/DD')
         };
 
@@ -57,7 +59,7 @@ function writeBooksJSON(jsonString) {
     if (err) {
       console.log(err);
     }
-    console.log('Books datafile updated!');
+    console.log('Books datafile updated!', jsonString);
   });
 }
 
