@@ -3,15 +3,6 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rss = require("@11ty/eleventy-plugin-rss");
 // String manipulation
 const day = require("dayjs");
-// CSS processing
-const postcss = require("postcss");
-const postcssImport = require("postcss-import");
-const precss = require("precss");
-const autoprefixer = require("autoprefixer");
-const fontMagic = require("postcss-font-magician");
-const csso = require("csso");
-// HTML processing
-const htmlmin = require("html-minifier");
 
 module.exports = eleventyConfig => {
   // Plugins
@@ -21,19 +12,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/sw.js");
   eleventyConfig.addPassthroughCopy("src/manifest.json");
-
-  // Transforms
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true
-      });
-      return minified;
-    }
-    return content;
-  });
 
   // Shortcodes
   eleventyConfig.addNunjucksShortcode("theYear", function () {
@@ -61,16 +39,6 @@ module.exports = eleventyConfig => {
       stars += "★";
     }
     return stars;
-  });
-  eleventyConfig.addNunjucksAsyncFilter("cssmin", (cssCode, cb) => {
-    return postcss([postcssImport, precss, autoprefixer])
-      .process(cssCode, {
-        from: undefined
-      })
-      .then(result => {
-        return cb(null, csso.minify(result.css).css);
-      })
-      .catch(err => console.error(err));
   });
 
   // Collections

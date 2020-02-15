@@ -1,47 +1,10 @@
+---
+title: Home
+---
 {% extends 'layouts/base.njk' %}
-
-{% block styleBlock %}
-  {% set extraCss %}
-    {% include 'css/static.pcss' %}
-    {% include 'css/components/post-list.pcss' %}
-  {% endset %}
-  <style>{{ extraCss | cssmin | safe }}</style>
-{% endblock %}
 
 {% block content %}
 <section class="home">
-  <figure class="hero">
-    <h2 class="thicc">BROWSER SO WIDE <span>(Dear Screen Reader User, This text is a small joke for sighted users with wide-ass monitors who view my site in a maximized browser window. Please forgive this small intrusion on your experience of using my website. Cheers, Rob.)</span></h2>
-    <img 
-      src="/assets/images/global/banners/blue-ridge-mountains-1900.jpg" 
-      alt="Blue Ridge Mountains" 
-      srcset="/assets/images/global/banners/blue-ridge-mountains-1900.jpg 1900w,
-      /assets/images/global/banners/blue-ridge-mountains-800.jpg 800w,
-      /assets/images/global/banners/blue-ridge-mountains-375.jpg 375w"
-    >
-    <figcaption class="hero__caption">Blue Ridge Mountains</figcaption>
-  </figure>
   {% include 'partials/social.njk' %}
-  <div class="post_list latest">
-    <h2 class="post_list__heading">Some Posts</h2>
-    {% for entry in collections.latestPosts %}
-      <article class="post_list__post">
-          <h3 class="post_list__post__heading">
-            <a href="{{entry.url}}">{{ entry.data.title }}</a>
-          </h3>
-            <p class="post_list__post__date">
-              {{ entry.date | parseDateReadable }}
-            </p>
-          <p class="post_list__post__text">
-            {{ entry.data.description }}
-          </p>
-      </article>
-    {% endfor %}
-    <div class="read-more">
-      <p>
-      	<a href="/posts">All Posts »</a>
-      </p>
-    </div>
-  </div>
 </section>
 {% endblock %}

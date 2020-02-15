@@ -3,14 +3,6 @@ title: Contact Me
 ---
 {% extends 'layouts/base.njk' %}
 
-{% block styleBlock %}
-  {% set extraCss %}
-    {% include 'css/static.pcss' %}
-    {% include 'css/components/form.pcss' %}
-  {% endset %}
-  <style>{{ extraCss | cssmin | safe }}</style>
-{% endblock %}
-
 {% block content %}
 <section class="contact">
   <h1>{{ title }}</h1>

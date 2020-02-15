@@ -1,0 +1,217 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Fonts  */
+@font-face {
+  font-family: Cabin;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(Cabin), local(Cabin-Regular), url(/assets/fonts/Cabin.woff2) format("woff2"), url(/assets/fonts/Cabin.woff) format("woff");
+}
+@font-face {
+  font-family: Cabin;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Cabin Bold"), local(Cabin-Bold), url(/assets/fonts/Cabin-Bold.woff2) format("woff2"), url(/assets/fonts/Cabin-Bold.woff) format("woff");
+}
+/* Variables */
+:root {
+  --color-dark: #050d0d;
+  --color-light: #f2fafc;
+  --color-primary: #276262;
+  --color-primary-dark: #163939;
+  --color-primary-light: #11797b;
+  --color-orange: #f7920e;
+  --color-azure: #18c8ea;
+  --color-gray: #8d9e9e;
+  --color-dark-gray: #333f3f;
+  --color-light-gray: #e4ebeb;
+  --font-family-sans: "Heebo", Verdana, sans-serif;
+  --font-family-serif: "Crimson Text", Georgia, serif;
+  --font-family-monospace: "Fira Code", "Courier New", monospace;
+  --size-300: 0.563rem;
+  --size-400: 1rem;
+  --size-500: 1.77rem;
+  --size-600: 3.157rem;
+  --size-700: 4.209rem;
+  --flow-space: 1em;
+}
+
+/* Global Styles */
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-family-serif);
+  font-size: 1rem;
+}
+
+main {
+  flex: auto;
+}
+
+img,
+figure {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-primary);
+  transition: color 200ms;
+}
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* Text */
+p,
+ul,
+ol,
+blockquote,
+figure {
+  font-size: var(--size-400);
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+code {
+  padding: 2px 5px;
+}
+
+ol,
+ul {
+  padding-left: var(--size-600);
+}
+
+ul {
+  list-style: disc;
+}
+
+pre[class*=language-] {
+  margin: 2.5rem 0;
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-size: var(--size-700);
+}
+
+h2 {
+  font-size: var(--size-600);
+}
+
+h3 {
+  font-size: var(--size-500);
+}
+
+blockquote {
+  font-style: italic;
+  background: var(--color-light-gray);
+  padding: 2.5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
+
+/* Header */
+.home header {
+  flex-basis: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */

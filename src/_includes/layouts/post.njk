@@ -1,13 +1,5 @@
 {% extends 'layouts/base.njk' %}
 
-{% block styleBlock %}
-  {% set prismCss %}
-    {% include 'css/prism.css' %}
-    {% include 'css/components/post.pcss' %}
-  {% endset %}
-  <style>{{ prismCss | cssmin | safe }}</style>
-{% endblock %}
-
 {% block content %}
   <section class="posts">
     <article class="post">
@@ -21,7 +13,7 @@
       </div>
       <script>
         document.querySelector('.twitter-link>a').href = `https://mobile.twitter.com/search?q=${window.location.href}`;
-      </script>             
+      </script>
     </article>
   </section>
 {% endblock %}

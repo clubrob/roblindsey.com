@@ -1,0 +1,51 @@
+form {
+    margin: 1.5rem 0;
+}
+label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    display: block;
+}
+input,
+textarea {
+    margin-bottom: 1.5rem;
+}
+textarea {
+    height: 15rem;
+}
+input[type='text'],
+input[type='email'],
+textarea {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    outline-color: transparent;
+    border: 1px solid rgb(214, 214, 212);
+    font-family: var(--font-family-sans);
+    font-size: 1.8rem;
+    &:focus {
+        background-color: var(--color-light-gray);
+    }
+}
+button.form__button {
+    border-color: transparent;
+    outline-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background-color: var(--color-primary-50);
+    color: #fff;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: var(--color-primary-90);
+    }
+}
+.success-message {
+    display: block;
+    font-size: 2rem;
+    padding: 2rem 0;
+    font-style: italic;
+}

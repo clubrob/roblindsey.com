@@ -4,14 +4,6 @@ permalink: posts/index.html
 ---
 {% extends 'layouts/base.njk' %}
 
-{% block styleBlock %}
-  {% set extraCss %}
-    {% include 'css/static.pcss' %}
-    {% include 'css/components/post-list.pcss' %}
-  {% endset %}
-  <style>{{ extraCss | cssmin | safe }}</style>
-{% endblock %}
-
 {% block content %}
   <section class="post_list">
     <h1 class="post_list__heading">{{ title }}</h1>

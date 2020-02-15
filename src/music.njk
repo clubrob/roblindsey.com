@@ -3,13 +3,6 @@ title: Awesome Songs
 ---
 {% extends 'layouts/base.njk' %}
 
-{% block styleBlock %}
-  {% set extraCss %}
-    {% include 'css/static.pcss' %}
-  {% endset %}
-  <style>{{ extraCss | cssmin | safe }}</style>
-{% endblock %}
-
 {% block content %}
 <section class="music">
   <h1 class="page-heading">{{ title }}</h1>
