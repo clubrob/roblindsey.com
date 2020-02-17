@@ -1,23 +1,38 @@
 <header class="top-bar">
   <nav class="nav-block">
     <div class="nav-block-logo">
-      <a href="/"><span>Rob</span> <span>Lindsey</span></a>
+      <a href="/"><span>R</span>L</a>
+    </div>
+    <div class="nav-block-toggle">
+      <button>
+        <img src="/assets/images/icons/menu-icon.svg" alt="Nav Menu Toggle">
+      </button>
     </div>
     <div class="nav-block-menu">
-      <ul>
-        <li>
-          <a href="/about" title="About">About</a>
-        </li>
-        <li>
-          <a href="/posts" title="Posts">‍Microblog</a>
-        </li>
-        <li>
-          <a href="/uses" title="Uses">Work</a>
-        </li>
-        <li>
-          <a href="/books" title="Books">Reading</a>
-        </li>
-      </ul>
+      <div class="nav-block-menu-wrapper">
+        <ul>
+          <li>
+            <a href="/work" title="Uses">Work</a>
+          </li>
+          <li>
+            <a href="/posts" title="Posts">‍Microblog</a>
+          </li>
+          <li>
+            <a href="/books" title="Books">Reading</a>
+          </li>
+          <li>
+            <a href="/about" title="About">About</a>
+          </li>
+        </ul>
+        {% include 'partials/social.njk' %}
+      </div>
     </div>
   </nav>
+  <div class="home-title title">
+    <h1><span>Rob</span><br>Lindsey</h1>
+    <p>Designer • Developer • Donkey</p>
+  </div>
+  <div class="page-title title">
+    <h1>{{title}}</h1>
+  </div>
 </header>
