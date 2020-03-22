@@ -5,31 +5,33 @@ title: Books
 
 {% block content %}
 <section class="bookshelf">
-  <h1 class="page-heading">{{ title }}</h1>
-  <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
-  {% for year in books %}
-    <h3 class="bookshelf__year">{{ year.year }} <span class="bookshelf__count">Total: {{ year.books.length }}</span></h3>
-    <div class="books">
-      {% for book in year.books %}
-        <div class="book">
-          <div class="book__image">
-            <a target="_blank" href="{{ book.isbn | bookUrl }}">
-              <img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}">
-              {# <img src="{{ book.imgUrl }}" alt="{{ book.title }}"> #}
-            </a>
+  <div class="container flow">
+    <h1 class="page-heading">{{ title }}</h1>
+    <p>Follow me on <a target="_blank" href="https://www.goodreads.com/user/show/1665822-rob-lindsey">GoodReads</a>!</p>
+    {% for year in books %}
+      <h3 class="bookshelf__year">{{ year.year }} <span class="bookshelf__count">Total: {{ year.books.length }}</span></h3>
+      <div class="books-grid">
+        {% for book in year.books %}
+          <div class="book">
+            <div class="book__image">
+              <a target="_blank" href="{{ book.isbn | bookUrl }}">
+                <img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}">
+                {# <img src="{{ book.imgUrl }}" alt="{{ book.title }}"> #}
+              </a>
+            </div>
+            <h4 class="book__title">
+              <a target="_blank" href="{{ book.isbn | bookUrl }}">{{ book.title }}</a>
+            </h4>
+            <p class="book__author"><small>{{ book.author }}</small></p>
+            <div class="book__response">
+              <p class="book__rating">
+                <small>My rating: {{ book.rating | ratingToStars }}</small>
+              </p>
+            </div>
           </div>
-          <h4 class="book__title">
-            <a target="_blank" href="{{ book.isbn | bookUrl }}">{{ book.title }}</a>
-          </h4>
-          <p class="book__author"><small>{{ book.author }}</small></p>
-          <div class="book__response">
-            <p class="book__rating">
-              <small>My rating: {{ book.rating | ratingToStars }}</small>
-            </p>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  {% endfor %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
 </section>
 {% endblock %}

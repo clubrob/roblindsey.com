@@ -1,0 +1,27 @@
+.bookshelf__year {
+    background-color: rgba(0,0,0,.3);
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+}
+.bookshelf__count {
+    float: right;
+    font-size: 1.1rem;
+}
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    grid-gap: 4rem;
+    margin-bottom: 40px;
+}
+.book__title {
+    margin-top: var(--size-400);
+}
+.book__author {
+    line-height: 1;
+    margin-bottom: var(--size-400);
+    color: var(--color-light);
+}
+.book__rating {
+    color: var(--color-light);
+    font-size: var(--size-400);
+}

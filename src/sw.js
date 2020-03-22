@@ -5,8 +5,6 @@ function updateStaticCache() {
   return caches.open(version + cacheName).then(function(cache) {
     return cache.addAll([
       '/',
-      '/assets/fonts/Cabin.woff2',
-      '/assets/fonts/Cabin-Bold.woff2',
       '/assets/images/global/icons/botdot-v2.svg',
       '/assets/images/global/banners/blue-ridge-mountains-1900.jpg',
       '/assets/images/global/icons/favicon-16x16.png'
