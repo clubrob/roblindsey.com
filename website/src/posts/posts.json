@@ -1,4 +1,0 @@
-{
-  "layout": "layouts/post.njk",
-  "permalink": "posts/{{ page.date | parseDate }}/{{ page.fileSlug }}/index.html"
-}
