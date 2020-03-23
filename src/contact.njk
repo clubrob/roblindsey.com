@@ -5,19 +5,25 @@ title: Contact Me
 
 {% block content %}
 <section class="contact">
-  <h1>{{ title }}</h1>
-  <form action="https://send.pageclip.co/MrqeT0nE0xy3AOtTUeKIMkGoceBB7RbM/RLD-Contact" class="pageclip-form" method="post">
-    <label for="name">Your Name</label>
-    <input type="text" name="name" value="" required />
-    <label for="email">Your Email</label>
-    <input type="email" name="email" value="" required />
-    <label for="body">Your Message</label>
-    <textarea name="body" required></textarea>
-    <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-    <button type="submit" class="pageclip-form__submit form__button">
-      <span>Send</span>
-    </button>
-  </form>
+<header class="page-intro full-bleed">
+		<div class="container">
+      <h1 class="page-heading">{{ title }}</h1>
+		</div>
+	</header>
+  <div class="container flow">
+    <form action="https://send.pageclip.co/MrqeT0nE0xy3AOtTUeKIMkGoceBB7RbM/RLD-Contact" class="pageclip-form" method="post">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" value="" required />
+      <label for="email">Your Email</label>
+      <input type="email" name="email" value="" required />
+      <label for="body">Your Message</label>
+      <textarea name="body" required></textarea>
+      <!-- This button will have a loading spinner. Keep the inner span for best results. -->
+      <button type="submit" class="pageclip-form__submit form__button">
+        <span>Send</span>
+      </button>
+    </form>
+  </div>
 </section>
 {% endblock %}
 

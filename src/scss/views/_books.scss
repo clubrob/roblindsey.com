@@ -1,17 +1,19 @@
 .bookshelf__year {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgba(0,0,0,.3);
     padding: 0.5rem 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--size-500);
 }
 .bookshelf__count {
-    float: right;
-    font-size: 1.1rem;
+    font-size: var(--size-400);
 }
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-    grid-gap: 4rem;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, .5fr));
+    grid-gap: var(--size-600);
+    margin-bottom: var(--size-600);
 }
 .book__title {
     margin-top: var(--size-400);

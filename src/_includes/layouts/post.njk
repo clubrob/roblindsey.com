@@ -2,12 +2,12 @@
 
 {% block content %}
   <section class="posts">
-    <article class="post">
+    <article class="container flow post">
       <header class="post__header">
         <h1 class="post__title">{{ title }}</h1>
         <p class="post__date">{{ date | parseDateReadable }}</p>
       </header>
-      <div class="post__content">
+      <div class="post__content flow">
         {{ content | safe }}
         <p class="twitter-link"><a>Discuss on Twitter.</a></p>
       </div>
