@@ -1,0 +1,28 @@
+{
+  "name": "rld-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "sass:dev": "sass src/scss/style.scss src/_includes/css/style.css",
+    "sass:prod": "sass src/scss/style.scss src/_includes/css/style.css --style=compressed",
+    "dev": "npm run sass:dev -- --watch & npx eleventy --serve",
+    "build": "npm run sass:prod && npx eleventy",
+    "now-build": "npm run sass:prod && npx eleventy",
+    "books": "cd automate/books && node books.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "concurrently": "^5.1.0",
+    "dayjs": "^1.8.23",
+    "html-minifier": "^4.0.0",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.3"
+  }
+}
