@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Rob Lindsey loves the Web">
+    <meta name="theme-color" content="#219653"/>
+    <meta name="google-site-verification" content="Pz7Lxm5-jyetCWux8IB6M-cxDRGJ_jRDsSJ3cvN9RKk" />
+    <meta name="p:domain_verify" content="ade42aa3b4e3abef2865584bdb3919de"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/images/global/icons/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>{% if title %}{{ site.title }} | {{ title }}{% else %}{{ site.title }}{% endif %}</title>
+    <style>{% include 'css/style.css' %}</style>
+  </head>
+  <body class="{{title | slug}}">
+    {% include 'partials/header.njk' %}
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+    {% include 'partials/footer.njk' %}
+    {% block scriptBlock %} {% endblock %}
+    {# <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('/sw.js')
+                .then(function() { console.log("Service Worker Registered"); });
+      }
+    </script> #}
+  </body>
+</html>
