@@ -23,7 +23,7 @@ module.exports = eleventyConfig => {
     return day(dateObj).format("YYYY/MM/DD");
   });
   eleventyConfig.addFilter("parseDateReadable", dateObj => {
-    return day(dateObj).format("D MMMM, YYYY");
+    return day(dateObj).format("MMMM D, YYYY");
   });
   eleventyConfig.addFilter("bookCover", isbn => {
     // return `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;

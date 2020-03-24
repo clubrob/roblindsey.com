@@ -12,13 +12,15 @@
 .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8rem, .5fr));
-    grid-gap: var(--size-600);
+    grid-gap: var(--step-2);
     margin-bottom: var(--size-600);
 }
 .book__title {
+    font-size: var(--size-400);
     margin-top: var(--size-400);
 }
 .book__author {
+    font-size: var(--size-400);
     line-height: 1;
     margin-bottom: var(--size-400);
     color: var(--color-light);

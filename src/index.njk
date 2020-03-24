@@ -6,12 +6,20 @@ title: Home
 {% block content %}
 <section class="home flow">
 	<header class="page-intro full-bleed">
-		<div class="container">
-			<h1>Hi. I'm Rob.</h1>
-			<p>It's my new <a href="https://yahoo.com">website</a>. What's up???</p>
+		<div class="container flow">
+			<h1>Rob Lindsey</h1>
+			<p>I'm a technologist, web developer, and web designer living in the western North Carolina mountains.</p>
+			<p>
+				<figure>
+					<img src="https://res.cloudinary.com/clubrob/image/upload/v1585072337/Rob%20Lindsey/blue-ridge-mountains-1900.jpg" alt="Blue Ridge Mountains">
+					<figcaption>Blue Ridge Mountains</figcaption>
+				</figure>
+			</img>
 		</div>
 	</header>
 	<div class="container flow">
+		<h2>Latest Posts</h2>
+		{% include "partials/posts-list.njk" %}
 	</div>
 </section>
 {% endblock %}

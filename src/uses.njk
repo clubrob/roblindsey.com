@@ -5,48 +5,51 @@ title: Currently Using
 
 {% block content %}
 <section class="uses">
-  <h1 class="page-heading">{{ title }}</h1>
-  <h3>Hardware</h3>
-  <ul>
-    <li>My main PC is a desktop I built. My first build with an AMD processor, and there's no noticeable difference so far. I also run a refurbished <a href="https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-yoga/ThinkPad-L380-Yoga/p/22TP2TBL38020M7">Lenovo ThinkPad Yoga L380</a> that I bought super cheap on their clearance site. It's a little ugly but super functional and pretty snappy.</li>
-    <li>Just upgraded to the iPhone Xs after pushing a 6s to its limits. Also switched to AT&T after three years on Verizon. I'll probably keep jumping between cell carriers as long as they keep giving the best deals to new/switching customers. Great system!</li>
-    <li><a href="http://www.wasdkeyboards.com/index.php/products/code-keyboard.html">WASD Code 87-key Keyboard</a> - MX Browns.</li>
-    <li><a href="https://smile.amazon.com/gp/product/B071YZJ1G1">Logitech MX Master 2S mouse</a>.</li>
-    <li>Samson MediaOne Studio Monitors</li>
-  </ul>
-  <h3>Software</h3>
-  <ul>
-    <li>Windows 10 and Windows Subsystem for Linux (WSL2) with Ubuntu from the Microsoft Store.</li>
-    <li><a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> is my main browser. I also really like the new <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>.</li>
-    <li><a href="https://1password.com/">1Password</a> is a godsend. Use a password manager! Use this one, it's awesome!</li>
-    <li><a href="https://www.fastmail.com">FastMail</a> is a great email service, reasonably priced.</li>
-    <li><a href="https://www.figma.com/">Figma</a> and <a href="https://affinity.serif.com/en-us/designer/">Affinity Designer</a> for designing stuff.</li>
-    <li><a href="https://affinity.serif.com/en-us/photo/">Affinity Photo</a> for photo editing.</li>
-    <li>I switch between <a href="https://simplenote.com/">Simplenote</a> and <a href="https://www.onenote.com/">OneNote</a> for note taking.</li>
-  </ul>
-  <h3>Coding</h3>
-  <ul>
-    <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> is great. Here are <a href="https://gist.github.com/clubrob/b42feed30f75c6b76339ebd5b878c55c">the extensions I use</a>.</li>
-    <li><a href="https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701">Windows Terminal</a> for command line.</li>
-    <li>Microsoft is really killing it with developer tools these days. I use their new coding font, too: <a href="https://github.com/microsoft/cascadia-code">Cascadia Code</a>.</li>
-    <li>I use <a href="https://www.docker.com/">Docker</a> containers with WSL2 engine for developing Wordpress.</li>
-  </ul>
-  <h3>This Site</h3>
-  <ul>
-    <li><a href="https://11ty.io">Eleventy</a> is a static site builder in Javascript. It works with multiple template engines out of the box. It's fast and light, and I love it so far.</li>
-    <li><a href="https://yarnpkg.com/">Yarn</a> for package management/build scripts.</li>
-    <li><a href="https://now.sh">now by Zeit</a> is super easy hosting and deployment. Their command line tool is so slick. The hosting is fast and reasonably priced. Great alternative to Netlify.</li>
-    <li><a href="https://github.com/clubrob/roblindsey.com">GitHub</a> is where the code lives.</li>
-    <li><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> for page templates.</li>
-    <li><a href="https://github.com/markdown-it/markdown-it">Markdown</a> for blog posts.</li>
-    <li><a href="https://postcss.org/">PostCSS</a> for CSS processing. SCSS syntax. CSSO minification. Styles are minimal and inlined.</li>
-    <li><a href="https://www.npmjs.com/package/html-minifier">HTML Minifier</a></li>
-  </ul>
-  <h3>Other Stuff</h3>
-  <ul>
-    <li>I like <a href="https://www.spotify.com/us/">Spotify</a> more than Apple Music.</li>
-    <li><a href="https://www.inoreader.com">Inoreader</a> for consuming RSS. Trying to wean myself from Twitter and other social media for news and content. RSS is the bess.</li>
-    <li><a href="https://www.wikihow.com/Get-a-Library-Card">A library card</a> and <a href="https://meet.libbyapp.com/">Libby</a>. Free ebooks and audio books. Check out <a href="/books">what I've been reading</a>.</li>
-  </ul>
+	<header class="page-intro full-bleed">
+		<div class="container">
+				<h1 class="page-heading">{{ title }}</h1>
+		</div>
+	</header>
+	<div class="container flow">
+		<h3>Hardware</h3>
+		<ul>
+			<li>My main PC is a desktop I built. My first build with an AMD processor, and there's no noticeable difference so far. I also run a refurbished <a href="https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-yoga/ThinkPad-L380-Yoga/p/22TP2TBL38020M7">Lenovo ThinkPad Yoga L380</a> that I bought super cheap on their clearance site. It's a little ugly but super functional and pretty snappy.</li>
+			<li>Just upgraded to the iPhone Xs after pushing a 6s to its limits. Also switched to AT&T after three years on Verizon. I'll probably keep jumping between cell carriers as long as they keep giving the best deals to new/switching customers. Great system!</li>
+			<li><a href="http://www.wasdkeyboards.com/index.php/products/code-keyboard.html">WASD Code 87-key Keyboard</a> - MX Browns.</li>
+			<li><a href="https://smile.amazon.com/gp/product/B071YZJ1G1">Logitech MX Master 2S mouse</a>.</li>
+			<li>Samson MediaOne Studio Monitors</li>
+		</ul>
+		<h3>Software</h3>
+		<ul>
+			<li>Windows 10 and Windows Subsystem for Linux (WSL2) with Ubuntu from the Microsoft Store.</li>
+			<li><a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> is my main browser. I also really like the new <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>.</li>
+			<li><a href="https://1password.com/">1Password</a> is a godsend. Use a password manager! Use this one, it's awesome!</li>
+			<li><a href="https://www.fastmail.com">FastMail</a> is a great email service, reasonably priced.</li>
+			<li><a href="https://www.figma.com/">Figma</a> and <a href="https://affinity.serif.com/en-us/designer/">Affinity Designer</a> for designing stuff.</li>
+			<li><a href="https://affinity.serif.com/en-us/photo/">Affinity Photo</a> for photo editing.</li>
+			<li><a href="https://simplenote.com/">Simplenote</a> and for text notes.</li>
+		</ul>
+		<h3>Coding</h3>
+		<ul>
+			<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> is great. Here are <a href="https://gist.github.com/clubrob/b42feed30f75c6b76339ebd5b878c55c">the extensions I use</a>.</li>
+			<li><a href="https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701">Windows Terminal</a> for command line.</li>
+			<li>Microsoft is really killing it with developer tools these days. I use their new coding font, too: <a href="https://github.com/microsoft/cascadia-code">Cascadia Code</a>.</li>
+			<li>I use <a href="https://www.docker.com/">Docker</a> containers with WSL2 engine for developing Wordpress.</li>
+		</ul>
+		<h3>This Site</h3>
+		<ul>
+			<li><a href="https://11ty.io">Eleventy</a> is a static site builder in Javascript. It works with multiple template engines out of the box. It's fast and light, and I love it so far.</li>
+			<li><a href="https://now.sh">now by Zeit</a> is super easy hosting and deployment. Their command line tool is so slick. The hosting is fast and reasonably priced. Great alternative to Netlify.</li>
+			<li><a href="https://github.com/clubrob/roblindsey.com">GitHub</a> is where the code lives.</li>
+			<li><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> for page templates.</li>
+			<li><a href="https://github.com/markdown-it/markdown-it">Markdown</a> for blog posts.</li>
+		</ul>
+		<h3>Other Stuff</h3>
+		<ul>
+			<li>I like <a href="https://www.spotify.com/us/">Spotify</a> more than Apple Music.</li>
+			<li><a href="https://www.inoreader.com">Inoreader</a> for consuming RSS. Trying to wean myself from Twitter and other social media for news and content. RSS is the bess.</li>
+			<li><a href="https://www.wikihow.com/Get-a-Library-Card">A library card</a> and <a href="https://meet.libbyapp.com/">Libby</a>. Free ebooks and audio books. Check out <a href="/books">what I've been reading</a>.</li>
+		</ul>
+	</div>
 </section>
 {% endblock %}

@@ -1,5 +1,5 @@
 ---
-title: Posts
+title: All Posts
 permalink: posts/index.html
 ---
 {% extends 'layouts/base.njk' %}
@@ -9,22 +9,11 @@ permalink: posts/index.html
 		<header class="page-intro full-bleed">
 			<div class="container">
 				<h1 class="page-heading">{{ title }}</h1>
+				<p><a href="/feed.xml">RSS Feed</a></p>
 			</div>
 		</header>
 		<div class="container flow">
-			{% for entry in collections.posts %}
-				<article class="post_list__post">
-					<h3 class="post_list__post__heading">
-					<a href="{{entry.url}}">{{ entry.data.title }}</a>
-					</h3>
-					<p class="post_list__post__date">
-						{{ entry.date | parseDateReadable }}
-					</p>
-					<p class="post_list__post__text">
-					{{ entry.data.description }}
-					</p>
-				</article>
-			{% endfor %}
+			{% include "partials/posts-list.njk" %}
 		</div>
 	</section>
 {% endblock %}

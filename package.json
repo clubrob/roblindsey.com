@@ -4,11 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "sass:dev": "sass src/scss/style.scss src/_includes/css/style.css",
-    "sass:prod": "sass src/scss/style.scss src/_includes/css/style.css --style=compressed",
-    "dev": "npm run sass:dev -- --watch & npx eleventy --serve",
-    "build": "npm run sass:prod && npx eleventy",
-    "now-build": "npm run sass:prod && npx eleventy",
+    "sass": "sass src/scss/style.scss src/_includes/css/style.css --style=compressed",
+    "dev": "npm run sass -- --watch & npx eleventy --serve",
+    "build": "npm run sass && npx eleventy",
+    "now-build": "npm run sass && npx eleventy",
     "books": "cd automate/books && node books.js"
   },
   "keywords": [],

@@ -59,7 +59,7 @@ function writeBooksJSON(jsonString) {
     if (err) {
       console.log(err);
     }
-    console.log('Books datafile updated!', jsonString);
+    console.log('Books datafile updated!');
   });
 }
 
