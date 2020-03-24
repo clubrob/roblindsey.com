@@ -1,11 +1,12 @@
 ---
 title: Rethinking Everything
-date: 2018-09-27T21:44:46Z
+date: '2018-09-27T21:44:46Z'
+timestamp: '1538084686'
 description: 2018 has been the year of rethinking all the things!
 ---
 <figure>
-  <img 
-    src="/assets/images/posts/2018/donald-giannatti-671274-unsplash-800.jpg" 
+  <img
+    src="/assets/images/posts/2018/donald-giannatti-671274-unsplash-800.jpg"
     alt="Is anybody out there?"
     srcset="/assets/images/posts/2018/donald-giannatti-671274-unsplash-800.jpg 800w, /assets/images/posts/2018/donald-giannatti-671274-unsplash-375.jpg 375w"
   >

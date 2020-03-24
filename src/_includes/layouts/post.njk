@@ -5,7 +5,7 @@
     <article class="container flow post">
       <header class="post__header">
         <h1 class="post__title">{{ title }}</h1>
-        <p class="post__date">{{ date | parseDateReadable }}</p>
+        <p class="post__date">{{ timestamp | parseDateReadable }}</p>
       </header>
       <div class="post__content flow">
         {{ content | safe }}

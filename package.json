@@ -21,6 +21,8 @@
     "concurrently": "^5.1.0",
     "dayjs": "^1.8.23",
     "html-minifier": "^4.0.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
     "prettier": "^1.19.1",
     "sass": "^1.26.3"
   }
