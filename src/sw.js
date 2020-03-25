@@ -1,13 +1,11 @@
-var version = 'v1::';
+var version = 'v2::';
 var cacheName = 'static';
 
 function updateStaticCache() {
   return caches.open(version + cacheName).then(function(cache) {
     return cache.addAll([
-      '/',
-      '/assets/images/global/icons/botdot-v2.svg',
-      '/assets/images/global/banners/blue-ridge-mountains-1900.jpg',
-      '/assets/images/global/icons/favicon-16x16.png'
+      '/assets/fonts/cooperhewitt-light-webfont.woff2',
+      '/assets/fonts/cooperhewitt-bold-webfont.woff2'
     ]);
   });
 }
