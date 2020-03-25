@@ -3,18 +3,13 @@
   "name": "Rob Lindsey",
   "icons": [
     {
-      "src": "/assets/images/global/icons/botdot-192.png",
+      "src": "/assets/images/icons/favicon.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "/assets/images/global/icons/botdot-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "start_url": "/",
-  "background_color": "#fefffe",
+  "background_color": "#1A211C",
   "display": "standalone",
-  "theme_color": "#219653"
+  "theme_color": "#f2fafc"
 }

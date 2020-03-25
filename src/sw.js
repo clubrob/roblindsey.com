@@ -2,6 +2,7 @@ var version = 'v2::';
 var cacheName = 'static';
 
 function updateStaticCache() {
+  caches.delete('v1::static');
   return caches.open(version + cacheName).then(function(cache) {
     return cache.addAll([
       '/assets/fonts/cooperhewitt-light-webfont.woff2',
