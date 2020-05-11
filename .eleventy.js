@@ -9,6 +9,7 @@ module.exports = eleventyConfig => {
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(rss);
 	// Passthrough
+	eleventyConfig.addPassthroughCopy({"src/_includes/css/*.map": "/"});
 	eleventyConfig.addPassthroughCopy("src/assets");
 	eleventyConfig.addPassthroughCopy("src/sw.js");
 	eleventyConfig.addPassthroughCopy("src/manifest.json");
