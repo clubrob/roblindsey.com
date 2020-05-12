@@ -3,9 +3,9 @@
   "name": "Rob Lindsey",
   "icons": [
     {
-      "src": "/assets/images/icons/favicon.png",
+      "src": "/assets/images/icons/site-icon.png",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",
