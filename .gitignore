@@ -7,3 +7,4 @@ automate/books/token.json
 automate/books/credentials.json
 automate/books/books.old.js
 .env
+.vscode
