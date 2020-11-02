@@ -20,8 +20,8 @@ title: Reading
           <div class="book">
             <div class="book__image">
               <a target="_blank" href="{{ book.isbn | bookUrl }}">
-                <img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}">
-                {# <img src="{{ book.imgUrl }}" alt="{{ book.title }}"> #}
+                {# <img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}"> #}
+                <img src="{{ book.imgUrl | bookCover(book.isbn) }}" alt="{{ book.title }}">
               </a>
             </div>
             <h4 class="book__title">

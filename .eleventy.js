@@ -28,9 +28,12 @@ module.exports = eleventyConfig => {
 		// datestring is UNIX format
 		return moment.unix(Number(dateString)).tz('America/New_York').format('MMMM D, YYYY');
 	});
-	eleventyConfig.addFilter("bookCover", isbn => {
-		// return `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
-		return `https://images-na.ssl-images-amazon.com/images/P/${isbn}.01._SCLZZZZZZZ_.jpg-M.jpg`;
+	eleventyConfig.addFilter("bookCover", (coverUrl, isbn) => {
+		if (coverUrl.indexOf('nophoto') > 0) {
+			return `https://images-na.ssl-images-amazon.com/images/P/${isbn}.01._SCLZZZZZZZ_.jpg-M.jpg`;
+		}
+		const filteredUrl = coverUrl.replace('._SX98_', '');
+		return filteredUrl;
 	});
 	eleventyConfig.addFilter("bookUrl", isbn => {
 		return `https://www.goodreads.com/book/isbn/${isbn}`;
