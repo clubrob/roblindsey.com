@@ -3,6 +3,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rss = require("@11ty/eleventy-plugin-rss");
 // String manipulation
 const moment = require('moment-timezone');
+const yaml = require("js-yaml");
 
 module.exports = eleventyConfig => {
 	// Plugins
@@ -28,16 +29,6 @@ module.exports = eleventyConfig => {
 		// datestring is UNIX format
 		return moment.unix(Number(dateString)).tz('America/New_York').format('MMMM D, YYYY');
 	});
-	eleventyConfig.addFilter("bookCover", (coverUrl, isbn) => {
-		if (coverUrl.indexOf('nophoto') > 0) {
-			return `https://images-na.ssl-images-amazon.com/images/P/${isbn}.01._SCLZZZZZZZ_.jpg-M.jpg`;
-		}
-		const filteredUrl = coverUrl.replace('._SX98_', '');
-		return filteredUrl;
-	});
-	eleventyConfig.addFilter("bookUrl", isbn => {
-		return `https://www.goodreads.com/book/isbn/${isbn}`;
-	});
 
 	eleventyConfig.addFilter("ratingToStars", num => {
 		let stars = "";
@@ -57,6 +48,9 @@ module.exports = eleventyConfig => {
 			.slice(-2)
 			.reverse();
 	});
+
+	// Data
+	eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
 
 	return {
 		templateFormats: ["njk", "md"],

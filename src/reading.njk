@@ -19,13 +19,12 @@ title: Reading
         {% for book in year.books %}
           <div class="book">
             <div class="book__image">
-              <a target="_blank" href="{{ book.isbn | bookUrl }}">
-                {# <img src="{{ book.isbn | bookCover }}" alt="{{ book.title }}"> #}
-                <img src="{{ book.imgUrl | bookCover(book.isbn) }}" alt="{{ book.title }}">
+              <a target="_blank" href="{{ book.url }}">
+                <img src="{{ book.img }}" alt="{{ book.title }}">
               </a>
             </div>
             <h4 class="book__title">
-              <a target="_blank" href="{{ book.isbn | bookUrl }}">{{ book.title }}</a>
+              <a target="_blank" href="{{ book.url }}">{{ book.title }}</a>
             </h4>
             <p class="book__author"><small>{{ book.author }}</small></p>
             <div class="book__response">

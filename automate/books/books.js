@@ -23,10 +23,13 @@ function getGoodReadsData() {
 
         var bookObj = {
           title: book.book.title._text,
+          subtitle: '',
           author: book.book.authors.author.name._text,
-          isbn: book.book.isbn._text,
+          //isbn: book.book.isbn._text,
+          img: book.book.image_url._text,
+          url: '',
           rating: book.rating._text,
-          imgUrl: book.book.image_url._text,
+          notes: '',
           dateRead: dayjs(dateRead).format('YYYY/MM/DD')
         };
 
@@ -55,7 +58,7 @@ function getGoodReadsData() {
 
 function writeBooksJSON(jsonString) {
   // Write JSON file
-  fs.writeFile('../../src/_data/books.json', jsonString, err => {
+  fs.writeFile('books.json', jsonString, err => {
     if (err) {
       console.log(err);
     }
