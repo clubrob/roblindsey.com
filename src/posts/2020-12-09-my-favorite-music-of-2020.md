@@ -2,7 +2,7 @@
 title: My Favorite Music of 2020
 date: '2020-12-09T15:43:33Z'
 timestamp: '1607528613'
-description:
+description: An awesome year for music.
 ---
 Not a lot of great stuff happened in 2020, but it wound up being an awesome year for music. I made a list of my favorite 20 albums of the year and my 40(+2) favorite songs.
 
