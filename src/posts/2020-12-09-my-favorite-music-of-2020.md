@@ -4,7 +4,9 @@ date: '2020-12-09T15:43:33Z'
 timestamp: '1607528613'
 description: An awesome year for music.
 ---
-Not a lot of great stuff happened in 2020, but it wound up being an awesome year for music. I made a list of my favorite 20 albums of the year and my 40(+2) favorite songs.
+(Update: 12-19-2020. Surprise Taylor Swift album!)
+
+Not a lot of great stuff happened in 2020, but it wound up being an awesome year for music. I made a list of my favorite 21 albums of the year and my 40(+3) favorite songs.
 
 ### Favorite Albums of 2020
 
@@ -17,6 +19,7 @@ Not a lot of great stuff happened in 2020, but it wound up being an awesome year
 1. [Katie Pruitt - Expectations](https://katiepruitt.limitedrun.com/products/672775-signed-or-unsigned-blue-marble-vinyl-lp)
 1. [Perfume Genius – Set My Heart on Fire Immediately](https://amzn.to/2W3EJsx)
 1. [Waxahatchee – Saint Cloud](https://amzn.to/3gwbND8)
+1. [Taylor Swift – evermore](https://amzn.to/3ayB8LT)
 1. [Moses Sumney - grae](https://amzn.to/3lZ6Xzd)
 1. [Sports Team – Deep Down Happy](https://amzn.to/37Pr6CN)
 1. [Charlie Crockett – Welcome to Hard Times](https://charley-crockett-official-store.myshopify.com/collections/welcome-to-hard-times/products/welcome-to-hard-times-vinyl)
