@@ -1,12 +1,28 @@
 - year: 2020
   books:
+    - title: The Antelope Wife
+      subtitle:
+      author: Louise Erdrich
+      img: https://images-na.ssl-images-amazon.com/images/I/51p3skL5ndL._SX329_BO1,204,203,200_.jpg
+      url: https://amzn.to/2LTFoep
+      rating: 3
+      notes: Poetic, abstract, difficult.
+      dateRead: 2020/12/17
+    - title: Gateway
+      subtitle:
+      author: Frederik Pohl
+      img: https://images-na.ssl-images-amazon.com/images/I/51G+jnR0m-L._SY344_BO1,204,203,200_.jpg
+      url: https://amzn.to/3nFIeSo
+      rating: 2
+      notes: Interesting concept. Terrible protagonist.
+      dateRead: 2020/12/11
     - title: Transcendent Kingdom
       subtitle:
       author: Yaa Gyasi
       img: https://m.media-amazon.com/images/I/412iwgOhnrL.jpg
       url: https://amzn.to/3gqxrbT
       rating: 4
-      notes:
+      notes: Are we animals or something more? Are we human or are we dancer?
       dateRead: 2020/12/05
     - title: Osama
       subtitle:
@@ -14,7 +30,7 @@
       img: https://m.media-amazon.com/images/I/51c90pO7WuL._SY346_.jpg
       url: https://amzn.to/2JYDUyB
       rating: 4
-      notes:
+      notes: Alternate reality where Osama Bin Laden is the protagonist of adventure novels. Brain bendy.
       dateRead: 2020/11/30
     - title: 'Network Effect (The Murderbot Diaries, #5)'
       subtitle:
@@ -22,7 +38,7 @@
       img: https://m.media-amazon.com/images/I/41spd48rBaL.jpg
       url: https://amzn.to/2ItAwLP
       rating: 5
-      notes:
+      notes: More murderbot. Still great.
       dateRead: 2020/11/27
     - title: 'Gideon the Ninth (The Locked Tomb #1)'
       subtitle:
@@ -30,7 +46,7 @@
       img: https://m.media-amazon.com/images/I/412PSZfs4FL._SY346_.jpg
       url: https://amzn.to/39NZdOi
       rating: 2
-      notes:
+      notes: Shoddy world building. Annoying, 2D characters.
       dateRead: 2020/11/16
     - title: 'X-Men: Fatal Attractions'
       subtitle:
@@ -126,7 +142,7 @@
       img: https://m.media-amazon.com/images/I/51hfMRveApL.jpg
       url: https://amzn.to/39PLsyF
       rating: 3
-      notes:
+      notes: Start of my 'Coping with 2020' comic book reading.
       dateRead: 2020/09/08
     - title: 'Exit Strategy (The Murderbot Diaries, #4)'
       subtitle:
@@ -182,7 +198,7 @@
       img: https://images-na.ssl-images-amazon.com/images/I/51Um9fAQOvL._SX322_BO1,204,203,200_.jpg
       url: https://amzn.to/3oxti8U
       rating: 5
-      notes:
+      notes: Classic. All should read. 70+ years on, these themes are still here.
       dateRead: 2020/07/12
     - title: 'Parable of the Talents (Earthseed, #2)'
       subtitle:
@@ -190,7 +206,7 @@
       img: https://m.media-amazon.com/images/I/51pIc1HrWUL.jpg
       url: https://amzn.to/2LbEfOY
       rating: 5
-      notes:
+      notes: Excellent continuation. Sad she didn't finish the series. I suppose we're all finishing it now.
       dateRead: 2020/07/08
     - title: 'Parable of the Sower (Earthseed, #1)'
       subtitle:
@@ -198,7 +214,7 @@
       img: https://m.media-amazon.com/images/I/51y4hUC5TmL.jpg
       url: https://amzn.to/2JPxtOH
       rating: 5
-      notes:
+      notes: Ms. Butler saw the future. That's the only explanation.
       dateRead: 2020/06/29
     - title: 'Stamped from the Beginning: The Definitive History of Racist Ideas in
         America'
@@ -207,7 +223,7 @@
       img: https://images-na.ssl-images-amazon.com/images/I/51aOx9PhKzL._SX322_BO1,204,203,200_.jpg
       url: https://amzn.to/37Heyxo
       rating: 5
-      notes:
+      notes: Dense, essential history of racism in the U.S.
       dateRead: 2020/06/15
     - title: Trust Exercise
       subtitle:
