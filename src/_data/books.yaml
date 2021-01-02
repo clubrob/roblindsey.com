@@ -1,5 +1,29 @@
 - year: 2020
   books:
+    - title: The Psychology of Time Travel
+      subtitle:
+      author: Kate Mascarenhas
+      img: https://images-na.ssl-images-amazon.com/images/I/51blkl3TjhL._SX324_BO1,204,203,200_.jpg
+      url: https://amzn.to/3rPaDrp
+      rating: 4
+      notes: Cozy time travel mystery.
+      dateRead: 2020/12/31
+    - title: The Midnight Library
+      subtitle:
+      author: Matt Haig
+      img: https://images-na.ssl-images-amazon.com/images/I/51MngXCR-NL._SX329_BO1,204,203,200_.jpg
+      url: https://amzn.to/3hAAizw
+      rating: 2
+      notes: Preachy self-help pablum, thinly disguised as spec-fic.
+      dateRead: 2020/12/27
+    - title: We Are All Completely Beside Ourselves
+      subtitle:
+      author: Karen Joy Fowler
+      img: https://images-na.ssl-images-amazon.com/images/I/51RXghdELDL._SX330_BO1,204,203,200_.jpg
+      url: https://amzn.to/2X4yuFA
+      rating: 5
+      notes: Lovely characters, unique plot, jauntily written.
+      dateRead: 2020/12/25
     - title: The Antelope Wife
       subtitle:
       author: Louise Erdrich
