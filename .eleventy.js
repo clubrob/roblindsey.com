@@ -50,7 +50,7 @@ module.exports = eleventyConfig => {
 	});
 
 	// Data
-	eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
 	return {
 		templateFormats: ["njk", "md"],
