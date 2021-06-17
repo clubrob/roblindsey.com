@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Rob Lindsey loves the Web">
-    <meta name="theme-color" content="#219653"/>
-    <meta name="google-site-verification" content="Pz7Lxm5-jyetCWux8IB6M-cxDRGJ_jRDsSJ3cvN9RKk" />
-    <meta name="p:domain_verify" content="ade42aa3b4e3abef2865584bdb3919de"/>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/assets/images/icons/favicon.png">
-    <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
-    <title>{% if title %}{{ site.title }} | {{ title }}{% else %}{{ site.title }}{% endif %}</title>
-    <style>{% include 'css/style.css' %}</style>
-  </head>
-  <body class="{{title | slug}}">
-    {% include 'partials/header.njk' %}
-    <main>
-      {% block content %} {% endblock %}
-    </main>
-    {% include 'partials/footer.njk' %}
-    {% block scriptBlock %} {% endblock %}
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-                .register('/sw.js')
-                .then(function() { console.log("Service Worker Registered"); });
-      }
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="Rob Lindsey loves the Web">
+        <meta name="theme-color" content="#219653"/>
+        <meta name="google-site-verification" content="Pz7Lxm5-jyetCWux8IB6M-cxDRGJ_jRDsSJ3cvN9RKk"/>
+        <meta name="p:domain_verify" content="ade42aa3b4e3abef2865584bdb3919de"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="icon" href="/assets/images/icons/favicon.png">
+        <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+        <title>
+            {% if title %}
+                {{ site.title }} | {{ title }}
+            {% else %}
+                {{ site.title }}
+            {% endif %}
+        </title>
+        <style>{% include 'css/style.css' %}</style>
+    </head>
+    <body class="{{ title | slug }}">
+        {% include 'partials/header.njk' %}
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        {% include 'partials/footer.njk' %}
+        {% block scriptBlock %}{% endblock %}
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator
+                    .serviceWorker
+                    .register('/sw.js')
+                    .then(function () {
+                        console.log("Service Worker Registered");
+                    });
+            }
+        </script>
+    </body>
 </html>
