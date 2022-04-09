@@ -23,7 +23,7 @@
     "concurrently": "^6.2.0",
     "dayjs": "^1.10.5",
     "html-minifier": "^4.0.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.33",
     "prettier": "^2.3.1",
     "sass": "^1.35.1"
