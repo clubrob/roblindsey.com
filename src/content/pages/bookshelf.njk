@@ -1,0 +1,33 @@
+---
+permalink: /bookshelf/
+title: Bookshelf
+---
+<section class="music">
+    <header class="page-intro">
+        <h1 class="page-heading">{{ title }}</h1>
+    </header>
+    <div class="books-grid">
+        {%- for book in goodReads -%}
+            <div class="book">
+                <img src="{{book.image}}" alt="{{ book.title }}">
+                <p class="book__details">
+                    <span class="book__date">{{ book.dateRead | dateForBookshelf }}</span>
+                    <strong class="book__title">{{ book.title }}</strong>
+                    <span class="book__author">by {{ book.author }}</span>
+                </p>
+                <p class="book__rating">{{ book.rating | ratingToStars }}</p>
+            </div>
+        {%- endfor -%}
+    </div>
+    <div class="book-social">
+        <h3>Find more of my reading</h3>
+        <ul>
+            <li>
+                <a href="https://www.goodreads.com/user/show/1665822-rob-lindsey">Goodreads</a>
+            </li>
+            <li>
+                <a href="https://app.thestorygraph.com/profile/roblindsey77">Storygraph</a>
+            </li>
+        </ul>
+    </div>
+</section>

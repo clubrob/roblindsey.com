@@ -1,31 +1,36 @@
 {
-  "name": "rld-frontend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "sass": "sass src/scss/style.scss src/_includes/css/style.css --style=compressed",
-    "dev": "npm run sass -- --watch & npx eleventy --serve",
-    "build": "npm run sass && npx eleventy",
-    "now-build": "npm run sass && npx eleventy",
-    "books": "cd automate/books && node books.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "js-yaml": "^4.1.0"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "concurrently": "^7.5.0",
-    "dayjs": "^1.11.6",
-    "html-minifier": "^4.0.0",
-    "moment": "^2.29.4",
-    "moment-timezone": "^0.5.38",
-    "prettier": "^2.7.1",
-    "sass": "^1.56.1"
-  }
+	"name": "rld-frontend",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"start": "npx @11ty/eleventy --serve",
+		"books": "cd automate/books && node books.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@inquirer/prompts": "^7.3.1",
+		"commander": "^13.1.0",
+		"js-yaml": "^4.1.0",
+		"open": "^10.1.0",
+		"sharp": "^0.33.5"
+	},
+	"dependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"@11ty/eleventy-fetch": "^5.0.2",
+		"@11ty/eleventy-img": "^6.0.1",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"@11ty/eleventy-plugin-rss": "^2.0.3",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@11tyrocks/eleventy-plugin-lightningcss": "^1.4.0",
+		"axios": "^1.7.9",
+		"dayjs": "^1.11.13",
+		"dotenv": "^16.4.7",
+		"fast-xml-parser": "^4.5.1",
+		"npm": "^11.0.0",
+		"prettier": "^3.4.2"
+	}
 }

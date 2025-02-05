@@ -1,0 +1,24 @@
+.flow {
+	> * + * {
+		margin-top: var(--flow-space);
+	}
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		margin-top: calc(var(--flow-space) * 1.75);
+	}
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}

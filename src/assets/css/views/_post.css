@@ -1,0 +1,12 @@
+.post__featured-image {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+.post__subtitle {
+	margin: 0;
+	font-size: 0.75em;
+	font-family: var(--font-family-heading);
+	font-weight: 400;
+}

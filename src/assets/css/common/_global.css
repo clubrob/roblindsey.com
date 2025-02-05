@@ -1,0 +1,115 @@
+/* Fonts  */
+@font-face {
+	font-family: "Nohemi";
+	src: url("../fonts/Nohemi-Regular.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nohemi";
+	src: url("../fonts/Nohemi-Bold.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 700;
+	text-rendering: optimizeLegibility;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nohemi";
+	src: url("../fonts/Nohemi-Black.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 900;
+	text-rendering: optimizeLegibility;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nohemi";
+	src: url("../fonts/Nohemi-Thin.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 100;
+	text-rendering: optimizeLegibility;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nohemi";
+	src: url("../fonts/Nohemi-ExtraBold.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 800;
+	text-rendering: optimizeLegibility;
+	font-display: swap;
+}
+
+:root {
+	--font-family-body: "Open Sans", -apple-system, BlinkMacSystemFont,
+		"Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	--font-family-heading: "Nohemi", Impact, sans-serif;
+
+	/* CSS HSL */
+	--lindsey-green: hsl(150deg 69.22% 44.79%);
+	--lindsey-pink: hsl(330.38deg 71.46% 70.93%);
+	--lindsey-blue: hsl(198, 60%, 67%);
+	--aquamarine: hsla(150, 100%, 80%, 1);
+	--tea-green: hsla(149, 100%, 88%, 1);
+	--french-gray: rgb(208, 214, 225);
+	--off-white: rgb(233, 236, 242);
+	--cadet-gray: hsla(215, 12%, 62%, 1);
+	--paynes-gray: hsla(216, 12%, 45%, 1);
+	--charcoal: hsla(215, 24%, 25%, 1);
+	--delft-blue: hsla(223, 22%, 26%, 1);
+	--raisin-black: hsla(225, 16%, 15%, 1);
+	--quinacridone-magenta: hsla(327, 50%, 37%, 1);
+	--magenta: rgb(195, 53, 131);
+	--tyrian-purple: hsla(330, 91%, 17%, 1);
+}
+
+body {
+	line-height: 1.6;
+	padding: 0;
+	margin: 0;
+	font-size: 17px;
+	font-weight: normal;
+	font-family: system-ui, sans-serif;
+	background-color: var(--raisin-black);
+	color: var(--off-white);
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-family-heading);
+	font-weight: 700;
+	letter-spacing: 0px;
+	color: var(--lindsey-pink);
+	text-transform: uppercase;
+}
+p,
+li {
+	font-family: var(--font-family-body);
+	font-weight: 400;
+	a {
+		text-decoration: underline;
+	}
+}
+a {
+	text-decoration-thickness: 0.05em;
+	text-underline-position: under;
+	color: currentColor;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+figcaption {
+	font-size: 0.75em;
+	background: var(--delft-blue);
+	padding: 0.15em 0.5em;
+}
+picture,
+img {
+	height: auto;
+}

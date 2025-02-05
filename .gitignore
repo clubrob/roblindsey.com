@@ -1,5 +1,5 @@
 node_modules
-www
+public
 
 automate/node_modules
 
@@ -8,3 +8,4 @@ automate/books/credentials.json
 automate/books/books.old.js
 .env
 .vscode
+.cache

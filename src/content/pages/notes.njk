@@ -1,0 +1,32 @@
+---
+title: Notes
+permalink: /notes/
+eleventyNavigation:
+    key: /notes
+    order: 2
+---
+<section class="notes_list">
+    <header class="page-intro">
+        <h1 class="page-heading">{{ title }}</h1>
+    </header>
+    <div class="">
+        <ul class="notes">
+            {%- for note in collections["notes"] %}
+                <li>
+                    <article class="note_list__post">
+                        <div class="note_list__post__text flow">
+                            {{ note.content | safe }}
+                        </div>
+                        <p class="note_list__post__date">
+                            <a href="{{note.url}}">{{ note.data.title }}</a>
+                        </p>
+                    </article>
+                    {% if loop.last %}
+                    {% else %}
+                        <hr>
+                    {% endif %}
+                </li>
+            {% endfor -%}
+        </ul>
+    </div>
+</section>

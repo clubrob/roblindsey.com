@@ -1,0 +1,4 @@
+{
+	"layout": "post",
+	"permalink": "posts/{{ page.date | dateForPath }}/{{ page.fileSlug }}/index.html"
+}
