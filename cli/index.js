@@ -3,6 +3,7 @@ import { select } from "@inquirer/prompts";
 import { fileURLToPath } from "url";
 import { dirname, basename } from "node:path";
 import createNote from "./commands/createNote.js";
+import createPost from "./commands/createPost.js";
 
 const siteRoot = dirname(fileURLToPath(import.meta.url)).replace("/cli", "");
 

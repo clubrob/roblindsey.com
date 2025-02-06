@@ -1,0 +1,23 @@
+.now-playing {
+	.now-playing__recently-played {
+		ul {
+			list-style: none;
+			li a {
+				display: flex;
+				align-items: center;
+				gap: 0.85rem;
+				img {
+					max-width: 70px;
+					width: max-content;
+					display: block;
+				}
+			}
+		}
+	}
+	hr {
+		margin: 4rem auto;
+		width: 60%;
+		border: 1px solid var(--paynes-gray);
+		border-bottom-width: 0;
+	}
+}

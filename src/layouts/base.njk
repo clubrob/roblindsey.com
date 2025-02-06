@@ -21,7 +21,17 @@
             {% endif %}
         </title>
     </head>
-    <body class="base--{{ title | slug }}">
+    <body class="base--{{ title | slug }}" onload="document.body.style.visibility = 'visible';">
+        <script>
+            document.body.style.visibility = `hidden`;
+        </script>
+        <noscript>
+            <style>
+                body {
+                    visibility: visible;
+                }
+            </style>
+        </noscript>
         {% include 'header.njk' %}
         <nav class="base--nav">{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}</nav>
         <main class="base--main">

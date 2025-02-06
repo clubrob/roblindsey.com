@@ -1,6 +1,6 @@
 <div class="latest-track">
     {%- if lastfm.recentTracks -%}
-        {% set track = lastfm.recentTracks[0] %}
+        {%- set track = lastfm.recentTracks[0] -%}
         <p>
             Recently played and tracked on <a href="https://last.fm/user/clubrob">last.fm</a>:
             <a href="{{ track.url }}">{{ track.name }}, by {{ track.artist['#text'] }}</a>
