@@ -1,6 +1,7 @@
 .now-playing {
 	.now-playing__recently-played {
 		ul {
+			padding: 0;
 			list-style: none;
 			li a {
 				display: flex;
