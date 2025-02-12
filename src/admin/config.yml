@@ -6,8 +6,8 @@ public_folder: "/assets/images/notes/2025"
 
 collections:
   - name: "notes"
-    label: "Notes"
-    identifier_field: date
+    label: "Note"
+    identifier_field: permalink
     folder: "src/content/notes/2025"
     create: true
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
