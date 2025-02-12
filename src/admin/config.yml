@@ -11,7 +11,7 @@ public_folder: "/assets/images/notes/2025"
 collections:
   - name: "notes"
     label: "Note"
-    identifier_field: permalink
+    identifier_field: slug
     folder: "src/content/notes/2025"
     create: true
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
