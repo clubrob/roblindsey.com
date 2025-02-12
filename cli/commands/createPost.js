@@ -12,8 +12,8 @@ function slugify(string) {
 export default async (siteRoot) => {
 	const title = await input({ message: "Post title" });
 	const slug = await input({ message: "Post slug", default: slugify(title) });
-    const now = new Date();
-    const timestamp = Math.floor(now / 1000);
+	const now = new Date();
+	const timestamp = Math.floor(now / 1000);
 	const postDate = now.toISOString();
 	const slugDay = postDate.split("T")[0];
 	const year = now.getFullYear();
@@ -41,6 +41,6 @@ featuredImage:
 		postFileContents,
 		{
 			flag: "wx",
-		}
+		},
 	);
 };

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import dotenv from "dotenv/config";
 import axios from "axios";
 import { AssetCache } from "@11ty/eleventy-fetch";
@@ -10,7 +11,8 @@ export default async function () {
 	}
 
 	const { data: recentTracksData } = await axios.get(
-		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=clubrob&api_key=${process.env.LAST_FM_KEY}&format=json`
+		// eslint-disable-next-line no-undef
+		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=clubrob&api_key=${process.env.LAST_FM_KEY}&format=json`,
 	);
 
 	const response = {

@@ -10,7 +10,11 @@ export default async function (eleventyConfig) {
 
 	// Plugins
 	Object.keys(plugins).forEach((name) => {
-		eleventyConfig.addPlugin(plugins[name].plugin, plugins[name].options, plugins[name].metadata);
+		eleventyConfig.addPlugin(
+			plugins[name].plugin,
+			plugins[name].options,
+			plugins[name].metadata,
+		);
 	});
 
 	// Add filters

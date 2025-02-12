@@ -18,7 +18,7 @@ export const plugins = {
 	pluginRss: {
 		plugin: pluginRss,
 		options: {},
-        metadata: {},
+		metadata: {},
 	},
 	eleventyNavigationPlugin: {
 		plugin: eleventyNavigationPlugin,

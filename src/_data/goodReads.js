@@ -20,8 +20,8 @@ export default async function () {
 		mappedBook.title = book.title;
 		mappedBook.author = book.author_name;
 		mappedBook.image = book.book_large_image_url;
-        mappedBook.dateRead = book.user_read_at;
-        mappedBook.rating = book.user_rating;
+		mappedBook.dateRead = book.user_read_at;
+		mappedBook.rating = book.user_rating;
 		return mappedBook;
 	});
 
