@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% include "meta.njk" %}
+	<head>
+		{% include "meta.njk" %}
 
-        <link rel="me" href="https://social.lol/@robble">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-        <link rel="icon" href="/assets/images/icons/favicon.png">
-        <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <title>
-            {% if title %}{{ title }} | {{ site.info.title }}
-            {% else %}{{ site.info.title }}
-            {% endif %}
-        </title>
-    </head>
-    <body class="base--{{ title | slug }}" onload="document.body.style.visibility = 'visible';">
-        <script>
-            document.body.style.visibility = `hidden`;
-        </script>
-        <noscript>
-            <style>
-                body {
-                    visibility: visible;
-                }
-            </style>
-        </noscript>
-        {% include 'header.njk' %}
-        <nav class="base--nav">{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}</nav>
-        <main class="base--main">
-            {{ content | safe }}
-        </main>
-        {% include "footer.njk" %}
-        <script src="/assets/js/app.js"></script>
-    </body>
+		<link rel="me" href="https://social.lol/@robble">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="icon" href="/assets/images/icons/favicon.png">
+		<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+		<link rel="stylesheet" href="/assets/css/style.css">
+
+		{% block head %}{% endblock %}
+		<title>
+			{% if title %}{{ title }} | {{ site.info.title }}
+			{% else %}{{ site.info.title }}
+			{% endif %}
+		</title>
+	</head>
+	<body class="base--{{ title | slug }}" onload="document.body.style.visibility = 'visible';">
+		<script>
+			document.body.style.visibility = `hidden`;
+		</script>
+		<noscript>
+			<style>
+				body {
+					visibility: visible;
+				}
+			</style>
+		</noscript>
+		{% include 'header.njk' %}
+		<nav class="base--nav">{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}</nav>
+		<main class="base--main">
+			{{ content | safe }}
+		</main>
+		{% include "footer.njk" %}
+		<script src="/assets/js/app.js"></script>
+	</body>
 </html>
