@@ -13,7 +13,6 @@ export default async (siteRoot) => {
 
 	// prettier-ignore
 	const noteFileContents = `---
-slug: ${slug}
 date: ${postDate}
 ---
 

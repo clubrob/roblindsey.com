@@ -11,16 +11,10 @@ public_folder: "/assets/images/notes/2025"
 collections:
   - name: "notes"
     label: "Note"
-    identifier_field: slug
+    identifier_field: body
     folder: "src/content/notes/2025"
     create: true
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
     fields:
-      - {
-          label: "Slug",
-          name: "slug",
-          widget: "string",
-          default: "{{collections.slug}}",
-        }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime", default: "{{now}}" }
       - { label: "Body", name: "body", widget: "markdown" }

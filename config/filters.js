@@ -23,4 +23,11 @@ export const filters = {
 	theYear: (date) => {
 		return new Date(date).getFullYear().toString();
 	},
+	noteSlug: (date) => {
+		const noteDate = new Date(date).toISOString();
+		const slugDay = noteDate.split("T")[0];
+		const slugTime = noteDate.split("T")[1].slice(0, 8).replaceAll(":", "-");
+		const slug = `${slugDay}-${slugTime}`.replaceAll("-", "");
+		return slug;
+	},
 };
