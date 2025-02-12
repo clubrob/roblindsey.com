@@ -7,11 +7,16 @@ public_folder: "/assets/images/notes/2025"
 collections:
   - name: "notes"
     label: "Notes"
+    identifier_field: date
     folder: "src/content/notes/2025"
     create: true
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "note" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/notes/2025/{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}/index.html" }
+      - {
+          label: "Permalink",
+          name: "permalink",
+          widget: "hidden",
+          default: "/notes/2025/{{slug}}/index.html",
+        }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
