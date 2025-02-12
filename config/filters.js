@@ -20,4 +20,7 @@ export const filters = {
 		const postDate = new Date(date);
 		return dayjs(postDate).format("MMMM D, YYYY").toString();
 	},
+	theYear: (date) => {
+		return new Date(date).getFullYear().toString();
+	},
 };

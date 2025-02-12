@@ -5,7 +5,6 @@ export default async (siteRoot) => {
 	const content = await input({ message: "Content" });
 
 	const now = new Date();
-	const timestamp = Math.floor(now / 1000);
 	const postDate = now.toISOString();
 	const slugDay = postDate.split("T")[0];
 	const slugTime = postDate.split("T")[1].slice(0, 8).replaceAll(":", "-");
@@ -14,9 +13,8 @@ export default async (siteRoot) => {
 
 	// prettier-ignore
 	const noteFileContents = `---
-permalink: /notes/${slug}/index.html
+slug: ${slug}
 date: ${postDate}
-timestamp: ${timestamp}
 ---
 
 ${content}

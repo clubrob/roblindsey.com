@@ -1,6 +1,10 @@
 backend:
   name: git-gateway
   branch: main
+
+local_backend: true
+logo_url: https://www.roblindsey.com/assets/images/icons/site-icon.png
+
 media_folder: "src/assets/images/notes/2025"
 public_folder: "/assets/images/notes/2025"
 
@@ -13,10 +17,10 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
     fields:
       - {
-          label: "Permalink",
-          name: "permalink",
-          widget: "hidden",
-          default: "/notes/2025/{{slug}}/index.html",
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          default: "{{collections.slug}}",
         }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
