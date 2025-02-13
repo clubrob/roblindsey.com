@@ -10,6 +10,8 @@
 		<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
 		<link rel="stylesheet" href="/assets/css/style.css">
 
+		{% include "analytics.njk" %}
+
 		{% block head %}{% endblock %}
 		<title>
 			{% if title %}{{ title }} | {{ site.info.title }}
