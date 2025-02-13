@@ -5,5 +5,6 @@ export default function () {
 		url: "https://roblindsey.com",
 		description:
 			"Rob Lindsey is a web guy in western NC. Music, books, and other stuff.",
+		imageUrl: "https://roblindsey.com/assets/images/icons/site-icon.png",
 	};
 }

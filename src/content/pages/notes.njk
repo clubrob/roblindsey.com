@@ -1,6 +1,10 @@
 ---
 title: Notes
-permalink: /notes/
+pagination:
+    data: collections.notes
+    size: 1
+    alias: note
+permalink: 'notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
 eleventyNavigation:
     key: /notes
     order: 2
@@ -11,7 +15,7 @@ eleventyNavigation:
     </header>
     <div class="">
         <ul class="notes">
-            {%- for note in collections["notes"] %}
+            {%- for note in pagination.items %}
                 <li>
                     <article class="note_list__post">
                         <div class="note_list__post__text flow">
@@ -29,4 +33,18 @@ eleventyNavigation:
             {% endfor -%}
         </ul>
     </div>
+    <nav class="notes_pagination">
+        {% if pagination.href.next %}
+            <div>
+                <a href="{{ pagination.href.next }}">Older Notes</a>
+            </div>
+        {% else %}
+        {% endif %}
+        {% if pagination.href.previous %}
+            <div>
+                <a href="{{ pagination.href.previous }}">Newer Notes</a>
+            </div>
+        {% else %}
+        {% endif %}
+    </nav>
 </section>
