@@ -4,7 +4,7 @@ backend:
   branch: main
 
 local_backend: true
-logo_url: https://www.roblindsey.com/assets/images/icons/site-icon.png
+logo_url: https://roblindsey.com/assets/images/icons/site-icon.png
 
 media_folder: "src/assets/images/notes/2025"
 public_folder: "/assets/images/notes/2025"
