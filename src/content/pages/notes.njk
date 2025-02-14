@@ -2,7 +2,7 @@
 title: Notes
 pagination:
     data: collections.notes
-    size: 1
+    size: 10
     alias: note
 permalink: 'notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
 eleventyNavigation:
@@ -34,17 +34,17 @@ eleventyNavigation:
         </ul>
     </div>
     <nav class="notes_pagination">
-        {% if pagination.href.next %}
-            <div>
+        <div>
+            {% if pagination.href.next %}
                 <a href="{{ pagination.href.next }}">Older Notes</a>
-            </div>
-        {% else %}
-        {% endif %}
-        {% if pagination.href.previous %}
-            <div>
+            {% else %}
+            {% endif %}
+        </div>
+        <div>
+            {% if pagination.href.previous %}
                 <a href="{{ pagination.href.previous }}">Newer Notes</a>
-            </div>
-        {% else %}
-        {% endif %}
+            {% else %}
+            {% endif %}
+        </div>
     </nav>
 </section>
