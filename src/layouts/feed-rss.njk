@@ -5,7 +5,7 @@
         <link>{{ site.info.url | addPathPrefixToFullUrl }}</link>
         <description>{{ site.info.description }}</description>
         <language>en-us</language>
-        {%- for item in collections[collectionName] | reverse %}
+        {%- for item in collections[collectionName] -%}
             {%- set absolutePostUrl = item.url | htmlBaseUrl(site.info.url) %}
             <item>
                 <title>{{ item.data.title }}</title>
